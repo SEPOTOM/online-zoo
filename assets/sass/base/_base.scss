@@ -14,6 +14,10 @@
   max-width: 1190px;
   margin: 0 auto;
   padding: 0 15px;
+
+  @media screen and (max-width: $small-desktop) {
+    max-width: 970px;
+  }
 }
 
 [class*='_ibg'] {

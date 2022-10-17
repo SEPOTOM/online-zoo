@@ -5,6 +5,10 @@
 
   background-color: $black;
 
+  @media screen and (max-width: $small-desktop) {
+    background-color: $backgroundBlack;
+  }
+
   // .header__container
 
   &__container {
@@ -36,6 +40,10 @@
   &__list {
     display: flex;
     gap: 20px 58px;
+
+    @media screen and (max-width: $small-desktop) {
+      gap: 20px 48px;
+    }
   }
 
   // .header__item
