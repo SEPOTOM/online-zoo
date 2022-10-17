@@ -1,0 +1,18 @@
+%navigationLink {
+  font-weight: 500;
+  line-height: 140%;
+
+  background: $orange;
+  background-clip: text;
+
+  transition: color 0.3s ease 0s;
+
+  &:hover {
+    color: $whiteTransparent;
+  }
+
+  &._active {
+    color: $whiteTransparent;
+    cursor: default;
+  }
+}

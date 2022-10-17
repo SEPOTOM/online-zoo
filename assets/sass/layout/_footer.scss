@@ -1,0 +1,229 @@
+.footer {
+  position: relative;
+  z-index: 2;
+
+  padding: 40px 0 50px;
+
+  color: $white;
+
+  background-color: $backgroundBlack;
+
+  // .footer__container
+
+  &__container {
+    display: grid;
+    grid-template-columns: 300px auto (228px + 10px + 129px);
+    align-items: end;
+    gap: 36px 32px;
+  }
+
+  // .footer__main-link
+
+  &__main-link {
+    grid-column: span 2;
+    align-self: start;
+
+    @extend %logoContainer;
+
+    border-width: 0.5px;
+    border-color: $whiteHalfTransparent;
+  }
+
+  // .footer__logo
+
+  &__logo {
+    @extend %logoTitle;
+  }
+
+  // .footer__form
+
+  &__form {
+  }
+
+  // .footer__button
+
+  &__button {
+    z-index: 1;
+
+    grid-column: span 3;
+    justify-self: start;
+    margin-bottom: 8px;
+
+    @extend %squareButton;
+  }
+
+  // .footer__socials
+
+  &__socials {
+  }
+
+  // .footer__navigation
+
+  &__navigation {
+    justify-self: end;
+  }
+
+  // .footer__list
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 20px 58px;
+  }
+
+  // .footer__item
+
+  &__item {
+  }
+
+  // .footer__link
+
+  &__link {
+    @extend %navigationLink;
+  }
+
+  // .footer__designer
+
+  &__designer {
+    justify-self: end;
+    display: grid;
+    gap: 10px;
+
+    color: $whiteHalfTransparent;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:active {
+      color: $green;
+    }
+  }
+
+  // .footer__text
+
+  &__text {
+    font-weight: 100;
+    line-height: 130%;
+  }
+}
+
+.form-footer {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 14px 10px;
+
+  // .form-footer__title
+
+  &__title {
+    grid-column: span 2;
+
+    @include subtitleFont;
+  }
+
+  // .form-footer__field
+
+  &__field {
+    width: 228px;
+    height: 42px;
+    padding: 1px;
+
+    background: $orange;
+    border-radius: 2px;
+
+    &._active {
+      background: $green;
+    }
+
+    .form-footer:invalid & {
+      background: $red;
+    }
+
+    .form-footer:invalid &._default {
+      background: $orange;
+    }
+  }
+
+  // .form-footer__input
+
+  &__input {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+
+    line-height: 140%;
+    color: inherit;
+
+    background: $backgroundBlack;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: $grayTwo;
+    }
+  }
+
+  // .form-footer__button
+
+  &__button {
+    @extend %submitButton;
+  }
+}
+
+.socials-footer {
+  display: grid;
+  gap: 10px;
+
+  // .socials-footer__item
+
+  &__item {
+  }
+
+  // .socials-footer__link
+
+  &__link {
+    display: flex;
+    align-items: flex-end;
+    column-gap: 12px;
+
+    &:hover {
+      .socials-footer__text {
+        text-decoration: underline;
+      }
+    }
+
+    &:active {
+      .socials-footer__icon {
+        background-color: $green;
+      }
+
+      .socials-footer__text {
+        text-decoration: none;
+        color: $green;
+      }
+    }
+  }
+
+  // .socials-footer__icon
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 26px;
+    height: 26px;
+
+    background-color: $grayHalfTransparent;
+    border-radius: 50%;
+
+    text-decoration: none;
+  }
+
+  // .socials-footer__text
+
+  &__text {
+    line-height: 140%;
+  }
+}

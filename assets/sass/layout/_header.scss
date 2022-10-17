@@ -1,0 +1,54 @@
+.header {
+  padding: 14px 0;
+
+  color: $white;
+
+  background-color: $black;
+
+  // .header__container
+
+  &__container {
+    display: flex;
+    align-items: center;
+    gap: 25px 63px;
+  }
+
+  // .header__main-link
+
+  &__main-link {
+    @extend %logoContainer;
+  }
+
+  // .header__logo
+
+  &__logo {
+    @extend %logoTitle;
+  }
+
+  // .header__navigation
+
+  &__navigation {
+    flex: 1 1 auto;
+  }
+
+  // .header__list
+
+  &__list {
+    display: flex;
+    gap: 20px 58px;
+  }
+
+  // .header__item
+
+  &__item {
+    &:last-child {
+      margin-left: auto;
+    }
+  }
+
+  // .header__link
+
+  &__link {
+    @extend %navigationLink;
+  }
+}

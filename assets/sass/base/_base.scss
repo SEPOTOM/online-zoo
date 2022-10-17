@@ -1,0 +1,32 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+
+  overflow: hidden;
+
+  > main {
+    flex: 1 1 auto;
+  }
+}
+
+[class*='__container'] {
+  max-width: 1190px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+[class*='_ibg'] {
+  position: relative;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+}

@@ -1,0 +1,58 @@
+@font-face {
+  font-family: 'icons';
+  src: url('../../assets/iconsfont/icons.eot?7fmazu');
+  src: url('../../assets/iconsfont/icons.eot?7fmazu#iefix') format('embedded-opentype'), url('../../assets/iconsfont/icons.ttf?7fmazu') format('truetype'), url('../../assets/iconsfont/icons.woff?7fmazu') format('woff'), url('../../assets/iconsfont/icons.svg?7fmazu#icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^='_icon-']::before,
+[class*=' _icon-']::before {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icons' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+._icon-x::before {
+  content: '\e907';
+}
+
+._icon-hollow-arrow::before {
+  content: '\e906';
+}
+
+._icon-facebook::before {
+  content: '\e902';
+}
+
+._icon-instagram::before {
+  content: '\e903';
+}
+
+._icon-twitter::before {
+  content: '\e904';
+  font-size: 14px;
+}
+
+._icon-youtube::before {
+  content: '\e905';
+  font-size: 13px;
+}
+
+._icon-bamboo::before {
+  content: '\e900';
+}
+
+._icon-dollar::before {
+  content: '\e901';
+}

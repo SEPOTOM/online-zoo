@@ -1,0 +1,857 @@
+@import '../../abstracts/variables';
+@import '../../abstracts/mixins';
+@import '../../base/reset';
+@import '../../base/fonts';
+@import '../../base/iconsfont';
+@import '../../base/base';
+@import '../../components/buttons';
+@import '../../components/logo';
+@import '../../components/links';
+@import '../../layout/header';
+@import '../../layout/footer';
+
+.header {
+  z-index: 2;
+}
+
+.main {
+  // .main__watch
+
+  &__watch {
+    margin-top: -80px;
+    margin-bottom: 140px;
+  }
+
+  // .main__backstage
+
+  &__backstage {
+    position: relative;
+
+    margin-bottom: 179px;
+
+    &::before {
+      position: absolute;
+      top: -128px;
+      right: 0;
+
+      width: 208px / 1600px * 100%;
+      height: 613px / 403px * 100%;
+      max-width: 208px;
+      max-height: 613px;
+
+      background: url('../../assets/images/backstage/flower-decor.png') center right / contain no-repeat;
+
+      content: '';
+    }
+  }
+
+  // .main__pets
+
+  &__pets {
+    position: relative;
+
+    margin-bottom: 100px;
+
+    &::before,
+    &::after {
+      position: absolute;
+      bottom: -100px;
+
+      content: '';
+    }
+
+    &::before {
+      left: 0;
+
+      max-width: 292px;
+      max-height: 460px;
+      width: 292px / 1160px * 100%;
+      height: 460px / 1011px * 100%;
+
+      background: url('../../assets/images/pets/palm-decor.png') bottom left / contain no-repeat;
+    }
+
+    &::after {
+      right: 0;
+
+      max-width: 368px;
+      max-height: 275px;
+      width: 368px / 1160px * 100%;
+      height: 275px / 1011px * 100%;
+
+      background: url('../../assets/images/pets/strelitzia-decor.png') bottom right / contain no-repeat;
+    }
+  }
+
+  // .main__feed
+
+  &__feed {
+    margin-bottom: 140px;
+  }
+
+  // .main__testimonials
+
+  &__testimonials {
+    position: relative;
+
+    margin-bottom: 180px;
+
+    &::before {
+      position: absolute;
+      right: 0;
+      bottom: -317px;
+
+      width: 250px / 1160px * 100%;
+      height: 410px / 598px * 100%;
+      max-width: 250px;
+      max-height: 410px;
+
+      background: url('../../assets/images/testimonials/leaf-decor.png') right center / contain no-repeat;
+
+      content: '';
+    }
+  }
+}
+
+.watch {
+  position: relative;
+
+  padding: 166px 0 100px;
+
+  color: $white;
+
+  // .watch__container
+
+  &__container {
+    position: relative;
+    z-index: 1;
+
+    display: grid;
+    grid-template-columns: 500px;
+    justify-content: end;
+    gap: 60px;
+
+    text-align: center;
+
+    &::before {
+      position: absolute;
+      top: -74px;
+      right: 122px;
+      z-index: -1;
+
+      width: 465px;
+      height: 465px;
+
+      background: $orange;
+      border-radius: 50%;
+
+      content: '';
+    }
+  }
+
+  // .watch__title
+
+  &__title {
+    font-weight: 700;
+    font-size: 106.5px;
+    line-height: 75%;
+    text-transform: uppercase;
+  }
+
+  // .watch__text
+
+  &__text {
+    color: $yellow;
+  }
+
+  // .watch__button
+
+  &__button {
+    justify-self: center;
+    margin-left: 4px;
+
+    @extend %roundedButton;
+  }
+
+  // .watch__image
+
+  &__image {
+  }
+}
+
+.backstage {
+  // .backstage__container
+
+  &__container {
+    display: flex;
+    gap: 87px;
+  }
+
+  // .backstage__picture
+
+  &__picture {
+    align-self: flex-start;
+    flex: 1 0 (609px / 1160px * 100%);
+    padding-bottom: 403px / 1160px * 100%;
+  }
+
+  // .backstage__image
+
+  &__image {
+  }
+
+  // .backstage__content
+
+  &__content {
+  }
+
+  // .backstage__title
+
+  &__title {
+    margin-bottom: 21px;
+
+    @include h2Font;
+  }
+
+  // .backstage__description
+
+  &__description {
+    margin-bottom: 54px;
+
+    line-height: 130%;
+  }
+
+  // .backstage__subtitle
+
+  &__subtitle {
+    margin-bottom: 34px;
+
+    @include subtitleFont;
+  }
+
+  // .backstage__text
+
+  &__text {
+    line-height: 137%;
+  }
+}
+
+.pets {
+  // .pets__container
+
+  &__container {
+    display: grid;
+    justify-items: center;
+    gap: 80px;
+  }
+
+  // .pets__slider
+
+  &__slider {
+    position: relative;
+
+    width: 100%;
+  }
+
+  // .pets__swiper
+
+  &__swiper {
+  }
+
+  // .pets__slide
+
+  &__slide {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px 30px;
+    padding: 0 3px 0 1px;
+  }
+
+  // .pets__card
+
+  &__card {
+    padding: 1px;
+
+    background: $orange;
+    border-radius: 5px;
+  }
+
+  &__swipe-to-left,
+  &__swipe-to-right {
+    position: absolute;
+    top: 50%;
+
+    @extend %sliderButton;
+
+    transform: translate(0, calc(-50% - 2px));
+  }
+
+  // .pets__swipe-to-left
+
+  &__swipe-to-left {
+    left: -20px - 62px;
+
+    .pets__icon {
+      transform: rotate(180deg);
+    }
+  }
+
+  // .pets__swipe-to-right
+
+  &__swipe-to-right {
+    right: -18px - 62px;
+  }
+
+  // .pets__button
+
+  &__button {
+    @extend %roundedButton;
+
+    &::after {
+      background: $orangeColor;
+    }
+  }
+}
+
+.card-pets {
+  border-radius: 5px;
+  overflow: hidden;
+
+  // .card-pets__picture
+
+  &__picture {
+    display: block;
+    padding-bottom: 366px / 364px * 100%;
+
+    overflow: hidden;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+
+      width: 100%;
+      height: 100%;
+
+      background-color: $blackTransparent;
+      opacity: 0;
+
+      transition: opacity 0.3s ease 0s;
+
+      content: '';
+    }
+
+    &:hover {
+      .card-pets__hidden {
+        top: 0;
+      }
+
+      &::before {
+        opacity: 1;
+      }
+
+      .card-pets__image {
+        transform: scale(1.054);
+      }
+    }
+  }
+
+  // .card-pets__image
+
+  &__image {
+    transition: transform 0.3s ease 0s;
+  }
+
+  // .card-pets__hidden
+
+  &__hidden {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: stretch;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+
+    color: $white;
+
+    overflow: auto;
+
+    transition: top 0.3s ease 0s;
+  }
+
+  // .card-pets__title
+
+  &__title {
+    @include buttonFont;
+
+    .card-pets__hidden & {
+      margin: auto;
+      margin-bottom: 10px;
+    }
+  }
+
+  // .card-pets__description
+
+  &__description {
+    margin: auto;
+    margin-top: 0;
+
+    @include bodyFont;
+  }
+
+  // .card-pets__content
+
+  &__content {
+    display: grid;
+    grid-template-columns: auto 48px;
+    grid-auto-flow: column;
+    align-items: end;
+    padding: 8px 7px 13px 15px;
+
+    color: $black;
+
+    background-color: $white;
+  }
+
+  // .card-pets__place
+
+  &__place {
+    margin-top: -2px;
+
+    @include smallParagraphFont;
+  }
+
+  // .card-pets__icon
+
+  &__icon {
+    grid-row: span 2;
+    justify-self: end;
+    max-height: 38px;
+
+    &_padding {
+      padding: 2px 4px 0 0;
+    }
+  }
+}
+
+.feed {
+  position: relative;
+
+  padding: 69px 0 100px;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: $orangeGradient;
+    opacity: 0.9;
+
+    content: '';
+  }
+
+  // .feed__container
+
+  &__container {
+  }
+
+  // .feed__content
+
+  &__content {
+    position: relative;
+    z-index: 2;
+
+    padding: 41px 59px 59px 99px;
+
+    background: $frostedGlassWhite;
+    border-radius: 25px;
+  }
+
+  // .feed__title
+
+  &__title {
+    margin-bottom: 30px;
+    padding-right: 40px;
+
+    @include h2Font;
+    text-align: center;
+    color: $orangeColor;
+  }
+
+  // .feed__subtitle
+
+  &__subtitle {
+    margin-bottom: 40px;
+
+    @include subtitleFont;
+  }
+
+  // .feed__label
+
+  &__label {
+    margin-bottom: 10px;
+
+    font-weight: 500;
+    line-height: 130%;
+  }
+
+  // .feed__text
+
+  &__text {
+    max-width: 863px;
+    margin-bottom: 60px;
+
+    line-height: 130%;
+  }
+
+  // .feed__link
+
+  &__link {
+    position: relative;
+
+    transition: color 0.3s ease 0s;
+
+    &::before {
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+
+      border-bottom: 1px solid $orangeColor;
+
+      transition: border-bottom 0.3s ease 0s;
+
+      content: '';
+    }
+
+    &:hover {
+      color: $orangeColor;
+    }
+
+    &:active {
+      color: $green;
+
+      transition: color 0s ease 0s;
+
+      &::before {
+        border-color: $green;
+
+        transition: border-color 0s ease 0s;
+      }
+    }
+  }
+
+  // .feed__cards
+
+  &__cards {
+    padding-right: 40px;
+  }
+
+  // .feed__row
+
+  &__row {
+    display: grid;
+    padding-right: 40px;
+  }
+
+  // .feed__button
+
+  &__button {
+    justify-self: center;
+
+    @extend %roundedButton;
+  }
+}
+
+.cards-feed {
+  display: grid;
+  justify-items: center;
+  gap: 40px;
+  margin-bottom: 62px;
+
+  // .cards-feed__title
+
+  &__title {
+    @include h3Font;
+  }
+
+  // .cards-feed__list
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px 130px;
+  }
+
+  // .cards-feed__item
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 168px;
+
+    &:not(:nth-child(3n - 2)) {
+      position: relative;
+
+      &::before {
+        position: absolute;
+        top: 61px;
+        left: -100px;
+
+        font-size: 36px;
+      }
+    }
+  }
+
+  // .cards-feed__picture
+
+  &__picture {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 168px;
+    height: 168px;
+    padding: 22px;
+
+    background: $orange;
+    border-radius: 5px;
+
+    &::before {
+      position: absolute;
+      top: 1px;
+      right: 1px;
+      bottom: 1px;
+      left: 1px;
+
+      background-color: $white;
+      border-radius: 5px;
+
+      content: '';
+    }
+  }
+
+  // .cards-feed__icon
+
+  &__icon {
+    position: relative;
+    z-index: 2;
+
+    &_padding-top {
+      padding-top: 5px;
+    }
+  }
+
+  // .cards-feed__text
+
+  &__text {
+    @include bodyFont;
+  }
+}
+
+.testimonials {
+  // .testimonials__container
+
+  &__container {
+  }
+
+  // .testimonials__title
+
+  &__title {
+    margin-bottom: 47px;
+
+    @include h3Font;
+    text-align: center;
+  }
+
+  // .testimonials__slider
+
+  &__slider {
+    display: grid;
+    gap: 21px;
+    margin-bottom: 31px;
+  }
+
+  // .testimonials__swiper
+
+  &__swiper {
+    display: flex;
+    gap: 30px;
+  }
+
+  // .testimonials__slide
+
+  &__slide {
+  }
+
+  // .slide-testimonials__slipper
+
+  &__slipper {
+    position: relative;
+
+    width: 599px;
+    height: 8px;
+    margin: 0 auto;
+
+    background: $pinkGradient;
+    border-radius: 5px;
+
+    &::before {
+      position: absolute;
+      top: 0.5px;
+      right: 0.5px;
+      bottom: 0.5px;
+      left: 0.5px;
+
+      background-color: $light;
+      border-radius: 5px;
+
+      content: '';
+    }
+  }
+
+  // .testimonials__toggler
+
+  &__toggler {
+    position: absolute;
+    top: 1px;
+    bottom: 1px;
+    left: 0;
+
+    width: 115px;
+
+    background-color: $orangeColor;
+    border-radius: 5px;
+    cursor: pointer;
+
+    transition: background-color 0.3s ease 0s;
+
+    &:hover {
+      background-color: $orangeHover;
+    }
+  }
+
+  // .testimonials__button
+
+  &__button {
+    @extend %squareButton;
+  }
+}
+
+.slide-testimonials {
+  position: relative;
+
+  max-width: 268px;
+  max-height: 391px;
+  padding: 15px 14.5px 19px 16px;
+
+  background: $pinkGradient;
+  border-radius: 20px;
+  overflow: hidden;
+
+  &::before {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+    left: 2px;
+
+    background-color: $grayLight;
+    border-radius: 20px;
+
+    content: '';
+  }
+
+  // .slide-testimonials__header
+
+  &__header {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 37px auto;
+    gap: 1px 10px;
+  }
+
+  // .slide-testimonials__picture
+
+  &__picture {
+    grid-row: span 2;
+
+    max-height: 37px;
+
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  // .slide-testimonials__icon
+
+  &__icon {
+    width: 100%;
+    height: 100%;
+  }
+
+  // .slide-testimonials__name
+
+  &__name {
+    line-height: 120%;
+    color: $black;
+  }
+
+  // .slide-testimonials__info
+
+  &__info {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 10px;
+
+    @include smallParagraphFont;
+    color: $grayTwo;
+  }
+
+  // .slide-testimonials__place
+
+  &__place {
+  }
+
+  // .slide-testimonials__decor
+
+  &__decor {
+  }
+
+  // .slide-testimonials__time
+
+  &__time {
+  }
+
+  // .slide-testimonials__content
+
+  &__content {
+    max-height: 308px;
+
+    overflow: hidden;
+  }
+
+  // .slide-testimonials__text
+
+  &__text {
+    position: relative;
+
+    @include smallParagraphFont;
+    color: $gray;
+  }
+}

@@ -1,0 +1,38 @@
+%logoContainer {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 82px;
+  min-height: 52px;
+  padding-top: 2.55px;
+
+  border: 1px solid $white;
+  border-radius: 2px;
+
+  background: $orange;
+  background-clip: text;
+
+  transition: color 0.3s ease 0s;
+
+  &:hover {
+    color: $whiteTransparent;
+  }
+
+  &::before {
+    position: absolute;
+    left: 10.63px;
+    bottom: 8.79px;
+
+    color: $white;
+
+    transform: scale(1.2);
+  }
+}
+
+%logoTitle {
+  font-size: 19.0145px;
+  line-height: 120%;
+  text-align: center;
+}
