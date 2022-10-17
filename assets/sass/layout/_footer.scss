@@ -15,12 +15,15 @@
     grid-template-columns: 300px auto (228px + 10px + 129px);
     align-items: end;
     gap: 36px 32px;
+
+    @media screen and (max-width: $desktop) {
+      grid-template-columns: 200px auto 285px;
+    }
   }
 
   // .footer__main-link
 
   &__main-link {
-    grid-column: span 2;
     align-self: start;
 
     @extend %logoContainer;
@@ -38,6 +41,13 @@
   // .footer__form
 
   &__form {
+    grid-column: span 2;
+    justify-self: end;
+    max-width: 228px + 10px + 129px;
+
+    @media screen and (max-width: $small-desktop) {
+      margin-right: 32px;
+    }
   }
 
   // .footer__button
@@ -69,6 +79,10 @@
     display: flex;
     align-items: center;
     gap: 20px 58px;
+
+    @media screen and (max-width: $small-desktop) {
+      gap: 20px 48px;
+    }
   }
 
   // .footer__item
@@ -80,6 +94,10 @@
 
   &__link {
     @extend %navigationLink;
+
+    @media screen and (max-width: $small-desktop) {
+      font-weight: 400;
+    }
   }
 
   // .footer__designer

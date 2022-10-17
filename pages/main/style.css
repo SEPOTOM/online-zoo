@@ -513,11 +513,26 @@ form:valid .form-footer__button:active {
           align-items: end;
   gap: 36px 32px;
 }
+@media screen and (max-width: 1599.98px) {
+  .footer__container {
+    grid-template-columns: 200px auto 285px;
+  }
+}
 .footer__main-link {
-  grid-column: span 2;
-  align-self: start;
+  -ms-flex-item-align: start;
+      align-self: start;
   border-width: 0.5px;
   border-color: rgba(255, 255, 255, 0.5);
+}
+.footer__form {
+  grid-column: span 2;
+  justify-self: end;
+  max-width: 367px;
+}
+@media screen and (max-width: 1000px) {
+  .footer__form {
+    margin-right: 32px;
+  }
 }
 .footer__button {
   z-index: 1;
@@ -536,6 +551,16 @@ form:valid .form-footer__button:active {
       -ms-flex-align: center;
           align-items: center;
   gap: 20px 58px;
+}
+@media screen and (max-width: 1000px) {
+  .footer__list {
+    gap: 20px 48px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .footer__link {
+    font-weight: 400;
+  }
 }
 .footer__designer {
   justify-self: end;
