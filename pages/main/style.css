@@ -746,6 +746,11 @@ form:valid .form-footer__button:active {
 .main__feed {
   margin-bottom: 140px;
 }
+@media screen and (max-width: 1000px) {
+  .main__feed {
+    margin-bottom: 100px;
+  }
+}
 .main__testimonials {
   position: relative;
   margin-bottom: 180px;
@@ -1067,6 +1072,11 @@ form:valid .form-footer__button:active {
   position: relative;
   padding: 69px 0 100px;
 }
+@media screen and (max-width: 1000px) {
+  .feed {
+    padding: 30px 0 50px;
+  }
+}
 .feed::before {
   position: absolute;
   top: 0;
@@ -1085,6 +1095,12 @@ form:valid .form-footer__button:active {
   background: rgba(253, 253, 255, 0.52);
   border-radius: 25px;
 }
+@media screen and (max-width: 1000px) {
+  .feed__content {
+    padding: 30px 48px 50px 49px;
+    border-radius: 20px;
+  }
+}
 .feed__title {
   margin-bottom: 30px;
   padding-right: 40px;
@@ -1093,20 +1109,41 @@ form:valid .form-footer__button:active {
   text-align: center;
   color: #fe9013;
 }
+@media screen and (max-width: 1000px) {
+  .feed__title {
+    margin-bottom: 22px;
+    padding-right: 0;
+  }
+}
 .feed__subtitle {
   margin-bottom: 40px;
   font-size: 24px;
   line-height: 120%;
+}
+@media screen and (max-width: 1000px) {
+  .feed__subtitle {
+    margin-bottom: 20px;
+  }
 }
 .feed__label {
   margin-bottom: 10px;
   font-weight: 500;
   line-height: 130%;
 }
+@media screen and (max-width: 1000px) {
+  .feed__label {
+    max-width: 813px;
+  }
+}
 .feed__text {
   max-width: 863px;
   margin-bottom: 60px;
   line-height: 130%;
+}
+@media screen and (max-width: 1000px) {
+  .feed__text {
+    margin-bottom: 41px;
+  }
 }
 .feed__link {
   position: relative;
@@ -1126,6 +1163,11 @@ form:valid .form-footer__button:active {
   transition: border-bottom 0.3s ease 0s;
   content: "";
 }
+@media screen and (max-width: 1000px) {
+  .feed__link::before {
+    bottom: -1px;
+  }
+}
 .feed__link:hover {
   color: #fe9013;
 }
@@ -1142,11 +1184,23 @@ form:valid .form-footer__button:active {
   transition: border-color 0s ease 0s;
 }
 .feed__cards {
+  margin-bottom: 62px;
   padding-right: 40px;
+}
+@media screen and (max-width: 1000px) {
+  .feed__cards {
+    margin: 0 1px 71px 0;
+    padding-right: 0;
+  }
 }
 .feed__row {
   display: grid;
   padding-right: 40px;
+}
+@media screen and (max-width: 1000px) {
+  .feed__row {
+    padding-right: 0;
+  }
 }
 .feed__button {
   justify-self: center;
@@ -1156,7 +1210,11 @@ form:valid .form-footer__button:active {
   display: grid;
   justify-items: center;
   gap: 40px;
-  margin-bottom: 62px;
+}
+@media screen and (max-width: 1000px) {
+  .cards-feed {
+    gap: 39px;
+  }
 }
 .cards-feed__title {
   font-size: 36px;

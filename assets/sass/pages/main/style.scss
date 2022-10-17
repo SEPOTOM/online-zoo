@@ -123,6 +123,10 @@
 
   &__feed {
     margin-bottom: 140px;
+
+    @media screen and (max-width: $small-desktop) {
+      margin-bottom: 100px;
+    }
   }
 
   // .main__testimonials
@@ -543,6 +547,10 @@
 
   padding: 69px 0 100px;
 
+  @media screen and (max-width: $small-desktop) {
+    padding: 30px 0 50px;
+  }
+
   &::before {
     position: absolute;
     top: 0;
@@ -572,6 +580,12 @@
 
     background: $frostedGlassWhite;
     border-radius: 25px;
+
+    @media screen and (max-width: $small-desktop) {
+      padding: 30px 48px 50px 49px;
+
+      border-radius: 20px;
+    }
   }
 
   // .feed__title
@@ -583,6 +597,11 @@
     @include h2Font;
     text-align: center;
     color: $orangeColor;
+
+    @media screen and (max-width: $small-desktop) {
+      margin-bottom: 22px;
+      padding-right: 0;
+    }
   }
 
   // .feed__subtitle
@@ -591,6 +610,10 @@
     margin-bottom: 40px;
 
     @include subtitleFont;
+
+    @media screen and (max-width: $small-desktop) {
+      margin-bottom: 20px;
+    }
   }
 
   // .feed__label
@@ -600,6 +623,10 @@
 
     font-weight: 500;
     line-height: 130%;
+
+    @media screen and (max-width: $small-desktop) {
+      max-width: 813px;
+    }
   }
 
   // .feed__text
@@ -609,6 +636,10 @@
     margin-bottom: 60px;
 
     line-height: 130%;
+
+    @media screen and (max-width: $small-desktop) {
+      margin-bottom: 41px;
+    }
   }
 
   // .feed__link
@@ -631,6 +662,10 @@
       transition: border-bottom 0.3s ease 0s;
 
       content: '';
+
+      @media screen and (max-width: $small-desktop) {
+        bottom: -1px;
+      }
     }
 
     &:hover {
@@ -653,7 +688,13 @@
   // .feed__cards
 
   &__cards {
+    margin-bottom: 62px;
     padding-right: 40px;
+
+    @media screen and (max-width: $small-desktop) {
+      margin: 0 1px 71px 0;
+      padding-right: 0;
+    }
   }
 
   // .feed__row
@@ -661,6 +702,10 @@
   &__row {
     display: grid;
     padding-right: 40px;
+
+    @media screen and (max-width: $small-desktop) {
+      padding-right: 0;
+    }
   }
 
   // .feed__button
@@ -676,7 +721,10 @@
   display: grid;
   justify-items: center;
   gap: 40px;
-  margin-bottom: 62px;
+
+  @media screen and (max-width: $small-desktop) {
+    gap: 39px;
+  }
 
   // .cards-feed__title
 
