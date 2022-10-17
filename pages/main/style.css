@@ -670,6 +670,11 @@ form:valid .form-footer__button:active {
   position: relative;
   margin-bottom: 179px;
 }
+@media screen and (max-width: 1000px) {
+  .main__backstage {
+    margin-bottom: 142px;
+  }
+}
 .main__backstage::before {
   position: absolute;
   top: -128px;
@@ -680,6 +685,11 @@ form:valid .form-footer__button:active {
   max-height: 613px;
   background: url("../../assets/images/backstage/flower-decor.png") center right/contain no-repeat;
   content: "";
+}
+@media screen and (max-width: 1599.98px) {
+  .main__backstage::before {
+    display: none;
+  }
 }
 .main__pets {
   position: relative;
@@ -802,6 +812,11 @@ form:valid .form-footer__button:active {
   display: flex;
   gap: 87px;
 }
+@media screen and (max-width: 1000px) {
+  .backstage__container {
+    gap: 31px;
+  }
+}
 .backstage__picture {
   -ms-flex-item-align: start;
       align-self: flex-start;
@@ -810,10 +825,24 @@ form:valid .form-footer__button:active {
           flex: 1 0 52.5%;
   padding-bottom: 34.7413793103%;
 }
+@media screen and (max-width: 1000px) {
+  .backstage__picture {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 48.4042553191%;
+            flex: 1 0 48.4042553191%;
+    margin-top: 9px;
+    padding-bottom: 43.4042553191%;
+  }
+}
 .backstage__title {
   margin-bottom: 21px;
   font-size: 48px;
   line-height: 120%;
+}
+@media screen and (max-width: 1000px) {
+  .backstage__title {
+    margin-bottom: 22px;
+  }
 }
 .backstage__description {
   margin-bottom: 54px;

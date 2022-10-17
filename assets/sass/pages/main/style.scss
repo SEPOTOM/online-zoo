@@ -33,6 +33,10 @@
 
     margin-bottom: 179px;
 
+    @media screen and (max-width: $small-desktop) {
+      margin-bottom: 142px;
+    }
+
     &::before {
       position: absolute;
       top: -128px;
@@ -46,6 +50,10 @@
       background: url('../../assets/images/backstage/flower-decor.png') center right / contain no-repeat;
 
       content: '';
+
+      @media screen and (max-width: $desktop) {
+        display: none;
+      }
     }
   }
 
@@ -215,6 +223,10 @@
   &__container {
     display: flex;
     gap: 87px;
+
+    @media screen and (max-width: $small-desktop) {
+      gap: 31px;
+    }
   }
 
   // .backstage__picture
@@ -223,6 +235,12 @@
     align-self: flex-start;
     flex: 1 0 (609px / 1160px * 100%);
     padding-bottom: 403px / 1160px * 100%;
+
+    @media screen and (max-width: $small-desktop) {
+      flex: 1 0 (455px / 940px * 100%);
+      margin-top: 9px;
+      padding-bottom: 408px / 940px * 100%;
+    }
   }
 
   // .backstage__image
@@ -241,6 +259,10 @@
     margin-bottom: 21px;
 
     @include h2Font;
+
+    @media screen and (max-width: $small-desktop) {
+      margin-bottom: 22px;
+    }
   }
 
   // .backstage__description
