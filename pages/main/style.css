@@ -755,6 +755,11 @@ form:valid .form-footer__button:active {
   position: relative;
   margin-bottom: 180px;
 }
+@media screen and (max-width: 1000px) {
+  .main__testimonials {
+    margin-bottom: 140px;
+  }
+}
 .main__testimonials::before {
   position: absolute;
   right: 0;
@@ -765,6 +770,15 @@ form:valid .form-footer__button:active {
   max-height: 410px;
   background: url("../../assets/images/testimonials/leaf-decor.png") right center/contain no-repeat;
   content: "";
+}
+@media screen and (max-width: 1000px) {
+  .main__testimonials::before {
+    bottom: -225px;
+    width: 20.9574468085%;
+    height: 53.9101497504%;
+    max-width: 197px;
+    max-height: 324px;
+  }
 }
 
 .watch {
@@ -1296,16 +1310,37 @@ form:valid .form-footer__button:active {
   line-height: 130%;
   text-align: center;
 }
+@media screen and (max-width: 1000px) {
+  .testimonials__title {
+    margin-bottom: 29px;
+    padding-top: 1px;
+  }
+}
 .testimonials__slider {
   display: grid;
   gap: 21px;
   margin-bottom: 31px;
+}
+@media screen and (max-width: 1000px) {
+  .testimonials__slider {
+    margin-bottom: 50px;
+  }
 }
 .testimonials__swiper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 30px;
+}
+@media screen and (max-width: 1599.98px) {
+  .testimonials__slide._hide {
+    display: none;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .testimonials__row {
+    padding-right: 12px;
+  }
 }
 .testimonials__slipper {
   position: relative;
@@ -1326,6 +1361,11 @@ form:valid .form-footer__button:active {
   border-radius: 5px;
   content: "";
 }
+@media screen and (max-width: 1000px) {
+  .testimonials__slipper {
+    width: 390px;
+  }
+}
 .testimonials__toggler {
   position: absolute;
   top: 1px;
@@ -1338,6 +1378,11 @@ form:valid .form-footer__button:active {
   -webkit-transition: background-color 0.3s ease 0s;
   -o-transition: background-color 0.3s ease 0s;
   transition: background-color 0.3s ease 0s;
+}
+@media screen and (max-width: 1000px) {
+  .testimonials__toggler {
+    width: 75px;
+  }
 }
 .testimonials__toggler:hover {
   background-color: #e47209;
@@ -1352,6 +1397,16 @@ form:valid .form-footer__button:active {
   border-radius: 20px;
   overflow: hidden;
 }
+@media screen and (max-width: 1599.98px) {
+  .slide-testimonials {
+    max-width: none;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .slide-testimonials {
+    padding: 15px 14.5px 41px 16px;
+  }
+}
 .slide-testimonials::before {
   position: absolute;
   top: 2px;
@@ -1361,6 +1416,11 @@ form:valid .form-footer__button:active {
   background-color: #f1f3f2;
   border-radius: 20px;
   content: "";
+}
+@media screen and (max-width: 1000px) {
+  .slide-testimonials::before {
+    background-color: #f5f7f6;
+  }
 }
 .slide-testimonials__header {
   position: relative;
@@ -1396,6 +1456,11 @@ form:valid .form-footer__button:active {
 .slide-testimonials__content {
   max-height: 308px;
   overflow: hidden;
+}
+@media screen and (max-width: 1000px) {
+  .slide-testimonials__content {
+    max-height: 287px;
+  }
 }
 .slide-testimonials__text {
   position: relative;

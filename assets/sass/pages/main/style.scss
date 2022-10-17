@@ -136,6 +136,10 @@
 
     margin-bottom: 180px;
 
+    @media screen and (max-width: $small-desktop) {
+      margin-bottom: 140px;
+    }
+
     &::before {
       position: absolute;
       right: 0;
@@ -149,6 +153,15 @@
       background: url('../../assets/images/testimonials/leaf-decor.png') right center / contain no-repeat;
 
       content: '';
+
+      @media screen and (max-width: $small-desktop) {
+        bottom: -225px;
+
+        width: 197px / 940px * 100%;
+        height: 324px / 601px * 100%;
+        max-width: 197px;
+        max-height: 324px;
+      }
     }
   }
 }
@@ -822,6 +835,11 @@
 
     @include h3Font;
     text-align: center;
+
+    @media screen and (max-width: $small-desktop) {
+      margin-bottom: 29px;
+      padding-top: 1px;
+    }
   }
 
   // .testimonials__slider
@@ -830,6 +848,10 @@
     display: grid;
     gap: 21px;
     margin-bottom: 31px;
+
+    @media screen and (max-width: $small-desktop) {
+      margin-bottom: 50px;
+    }
   }
 
   // .testimonials__swiper
@@ -842,9 +864,22 @@
   // .testimonials__slide
 
   &__slide {
+    @media screen and (max-width: $desktop) {
+      &._hide {
+        display: none;
+      }
+    }
   }
 
-  // .slide-testimonials__slipper
+  // .testimonials__row
+
+  &__row {
+    @media screen and (max-width: $small-desktop) {
+      padding-right: 12px;
+    }
+  }
+
+  // .testimonials__slipper
 
   &__slipper {
     position: relative;
@@ -868,6 +903,10 @@
 
       content: '';
     }
+
+    @media screen and (max-width: $small-desktop) {
+      width: 390px;
+    }
   }
 
   // .testimonials__toggler
@@ -885,6 +924,10 @@
     cursor: pointer;
 
     transition: background-color 0.3s ease 0s;
+
+    @media screen and (max-width: $small-desktop) {
+      width: 75px;
+    }
 
     &:hover {
       background-color: $orangeHover;
@@ -909,6 +952,14 @@
   border-radius: 20px;
   overflow: hidden;
 
+  @media screen and (max-width: $desktop) {
+    max-width: none;
+  }
+
+  @media screen and (max-width: $small-desktop) {
+    padding: 15px 14.5px 41px 16px;
+  }
+
   &::before {
     position: absolute;
     top: 2px;
@@ -920,6 +971,10 @@
     border-radius: 20px;
 
     content: '';
+
+    @media screen and (max-width: $small-desktop) {
+      background-color: $light;
+    }
   }
 
   // .slide-testimonials__header
@@ -989,6 +1044,10 @@
     max-height: 308px;
 
     overflow: hidden;
+
+    @media screen and (max-width: $small-desktop) {
+      max-height: 287px;
+    }
   }
 
   // .slide-testimonials__text
