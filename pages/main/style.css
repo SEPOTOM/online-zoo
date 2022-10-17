@@ -695,10 +695,20 @@ form:valid .form-footer__button:active {
   position: relative;
   margin-bottom: 100px;
 }
+@media screen and (max-width: 1599.98px) {
+  .main__pets {
+    margin-bottom: 140px;
+  }
+}
 .main__pets::before, .main__pets::after {
   position: absolute;
   bottom: -100px;
   content: "";
+}
+@media screen and (max-width: 1599.98px) {
+  .main__pets::before, .main__pets::after {
+    bottom: -140px;
+  }
 }
 .main__pets::before {
   left: 0;
@@ -708,6 +718,15 @@ form:valid .form-footer__button:active {
   height: 45.4995054402%;
   background: url("../../assets/images/pets/palm-decor.png") bottom left/contain no-repeat;
 }
+@media screen and (max-width: 1599.98px) {
+  .main__pets::before {
+    max-width: 195px;
+    max-height: 203px;
+    width: 20.7446808511%;
+    height: 21.5957446809%;
+    background: url("../../assets/images/pets/palm-decor-small.png") bottom left/contain no-repeat;
+  }
+}
 .main__pets::after {
   right: 0;
   max-width: 368px;
@@ -715,6 +734,14 @@ form:valid .form-footer__button:active {
   width: 31.724137931%;
   height: 27.2007912957%;
   background: url("../../assets/images/pets/strelitzia-decor.png") bottom right/contain no-repeat;
+}
+@media screen and (max-width: 1599.98px) {
+  .main__pets::after {
+    max-width: 242px;
+    max-height: 181px;
+    width: 25.7446808511%;
+    height: 19.2553191489%;
+  }
 }
 .main__feed {
   margin-bottom: 140px;
@@ -862,6 +889,11 @@ form:valid .form-footer__button:active {
   justify-items: center;
   gap: 80px;
 }
+@media screen and (max-width: 1599.98px) {
+  .pets__container {
+    gap: 81px;
+  }
+}
 .pets__slider {
   position: relative;
   width: 100%;
@@ -871,6 +903,12 @@ form:valid .form-footer__button:active {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px 30px;
   padding: 0 3px 0 1px;
+}
+@media screen and (max-width: 1599.98px) {
+  .pets__slide {
+    gap: 92px 29px;
+    padding: 0 2px;
+  }
 }
 .pets__card {
   padding: 1px;
@@ -885,8 +923,20 @@ form:valid .form-footer__button:active {
       -ms-transform: translate(0, calc(-50% - 2px));
           transform: translate(0, calc(-50% - 2px));
 }
+@media screen and (max-width: 1599.98px) {
+  .pets__swipe-to-left, .pets__swipe-to-right {
+    -webkit-transform: translate(0, -50%);
+        -ms-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+  }
+}
 .pets__swipe-to-left {
   left: -82px;
+}
+@media screen and (max-width: 1599.98px) {
+  .pets__swipe-to-left {
+    left: 34.3103448276%;
+  }
 }
 .pets__swipe-to-left .pets__icon {
   -webkit-transform: rotate(180deg);
@@ -895,6 +945,11 @@ form:valid .form-footer__button:active {
 }
 .pets__swipe-to-right {
   right: -80px;
+}
+@media screen and (max-width: 1599.98px) {
+  .pets__swipe-to-right {
+    right: 34.3103448276%;
+  }
 }
 .pets__button::after {
   background: #fe9013;

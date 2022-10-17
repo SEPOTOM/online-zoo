@@ -64,12 +64,20 @@
 
     margin-bottom: 100px;
 
+    @media screen and (max-width: $desktop) {
+      margin-bottom: 140px;
+    }
+
     &::before,
     &::after {
       position: absolute;
       bottom: -100px;
 
       content: '';
+
+      @media screen and (max-width: $desktop) {
+        bottom: -140px;
+      }
     }
 
     &::before {
@@ -81,6 +89,15 @@
       height: 460px / 1011px * 100%;
 
       background: url('../../assets/images/pets/palm-decor.png') bottom left / contain no-repeat;
+
+      @media screen and (max-width: $desktop) {
+        max-width: 195px;
+        max-height: 203px;
+        width: 195px / 940px * 100%;
+        height: 203px / 940px * 100%;
+
+        background: url('../../assets/images/pets/palm-decor-small.png') bottom left / contain no-repeat;
+      }
     }
 
     &::after {
@@ -92,6 +109,13 @@
       height: 275px / 1011px * 100%;
 
       background: url('../../assets/images/pets/strelitzia-decor.png') bottom right / contain no-repeat;
+
+      @media screen and (max-width: $desktop) {
+        max-width: 242px;
+        max-height: 181px;
+        width: 242px / 940px * 100%;
+        height: 181px / 940px * 100%;
+      }
     }
   }
 
@@ -295,6 +319,10 @@
     display: grid;
     justify-items: center;
     gap: 80px;
+
+    @media screen and (max-width: $desktop) {
+      gap: 81px;
+    }
   }
 
   // .pets__slider
@@ -317,6 +345,11 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 20px 30px;
     padding: 0 3px 0 1px;
+
+    @media screen and (max-width: $desktop) {
+      gap: 92px 29px;
+      padding: 0 2px;
+    }
   }
 
   // .pets__card
@@ -336,12 +369,20 @@
     @extend %sliderButton;
 
     transform: translate(0, calc(-50% - 2px));
+
+    @media screen and (max-width: $desktop) {
+      transform: translate(0, -50%);
+    }
   }
 
   // .pets__swipe-to-left
 
   &__swipe-to-left {
     left: -20px - 62px;
+
+    @media screen and (max-width: $desktop) {
+      left: 398px / 1160px * 100%;
+    }
 
     .pets__icon {
       transform: rotate(180deg);
@@ -352,6 +393,10 @@
 
   &__swipe-to-right {
     right: -18px - 62px;
+
+    @media screen and (max-width: $desktop) {
+      right: 398px / 1160px * 100%;
+    }
   }
 
   // .pets__button
