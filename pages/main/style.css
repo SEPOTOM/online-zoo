@@ -661,6 +661,11 @@ form:valid .form-footer__button:active {
   margin-top: -80px;
   margin-bottom: 140px;
 }
+@media screen and (max-width: 1000px) {
+  .main__watch {
+    margin-bottom: 100px;
+  }
+}
 .main__backstage {
   position: relative;
   margin-bottom: 179px;
@@ -725,6 +730,11 @@ form:valid .form-footer__button:active {
   padding: 166px 0 100px;
   color: #ffffff;
 }
+@media screen and (max-width: 1000px) {
+  .watch {
+    padding: 123px 0 47px;
+  }
+}
 .watch__container {
   position: relative;
   z-index: 1;
@@ -735,6 +745,13 @@ form:valid .form-footer__button:active {
           justify-content: end;
   gap: 60px;
   text-align: center;
+}
+@media screen and (max-width: 1000px) {
+  .watch__container {
+    grid-template-columns: 400px;
+    gap: 41px;
+    padding-right: 71px;
+  }
 }
 .watch__container::before {
   position: absolute;
@@ -748,11 +765,24 @@ form:valid .form-footer__button:active {
   border-radius: 50%;
   content: "";
 }
+@media screen and (max-width: 1000px) {
+  .watch__container::before {
+    width: 367px;
+    height: 367px;
+    top: -54px;
+    right: 162px;
+  }
+}
 .watch__title {
   font-weight: 700;
   font-size: 106.5px;
   line-height: 75%;
   text-transform: uppercase;
+}
+@media screen and (max-width: 1000px) {
+  .watch__title {
+    font-size: 85px;
+  }
 }
 .watch__text {
   color: #ffee2e;
@@ -760,6 +790,11 @@ form:valid .form-footer__button:active {
 .watch__button {
   justify-self: center;
   margin-left: 4px;
+}
+@media screen and (max-width: 1000px) {
+  .watch__button {
+    margin-left: 0;
+  }
 }
 .backstage__container {
   display: -webkit-box;

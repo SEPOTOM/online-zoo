@@ -20,6 +20,10 @@
   &__watch {
     margin-top: -80px;
     margin-bottom: 140px;
+
+    @media screen and (max-width: $small-desktop) {
+      margin-bottom: 100px;
+    }
   }
 
   // .main__backstage
@@ -120,6 +124,10 @@
 
   color: $white;
 
+  @media screen and (max-width: $small-desktop) {
+    padding: 123px 0 47px;
+  }
+
   // .watch__container
 
   &__container {
@@ -132,6 +140,12 @@
     gap: 60px;
 
     text-align: center;
+
+    @media screen and (max-width: $small-desktop) {
+      grid-template-columns: 400px;
+      gap: 41px;
+      padding-right: 71px;
+    }
 
     &::before {
       position: absolute;
@@ -146,6 +160,14 @@
       border-radius: 50%;
 
       content: '';
+
+      @media screen and (max-width: $small-desktop) {
+        width: 367px;
+        height: 367px;
+
+        top: -54px;
+        right: 162px;
+      }
     }
   }
 
@@ -156,6 +178,10 @@
     font-size: 106.5px;
     line-height: 75%;
     text-transform: uppercase;
+
+    @media screen and (max-width: $small-desktop) {
+      font-size: 85px;
+    }
   }
 
   // .watch__text
@@ -171,6 +197,10 @@
     margin-left: 4px;
 
     @extend %roundedButton;
+
+    @media screen and (max-width: $small-desktop) {
+      margin-left: 0;
+    }
   }
 
   // .watch__image
