@@ -28,6 +28,15 @@
     @media screen and (max-width: $small-desktop) {
       margin-bottom: 100px;
     }
+
+    @media screen and (max-width: $tablet) {
+      margin-top: 0;
+      margin-bottom: 60px;
+    }
+
+    @media screen and (max-width: $mobile) {
+      margin-bottom: 30px;
+    }
   }
 
   // .main__backstage
@@ -181,9 +190,24 @@
     padding: 123px 0 47px;
   }
 
+  @media screen and (max-width: $tablet) {
+    padding: 84px 0 40px;
+  }
+
+  @media screen and (max-width: $mobile) {
+    margin-top: 34px;
+    padding: 41px 0 0;
+  }
+
   // .watch__container
 
   &__container {
+    display: flex;
+  }
+
+  // .watch__content
+
+  &__content {
     position: relative;
     z-index: 1;
 
@@ -191,19 +215,37 @@
     grid-template-columns: 500px;
     justify-content: end;
     gap: 60px;
+    width: 100%;
 
     text-align: center;
 
     @media screen and (max-width: $small-desktop) {
       grid-template-columns: 400px;
-      gap: 41px;
-      padding-right: 71px;
+      gap: 41px 50px;
+      padding-right: 56px;
+    }
+
+    @media screen and (max-width: $tablet) {
+      grid-template-columns: auto auto;
+      align-items: end;
+      padding-right: 0;
+    }
+
+    @media screen and (max-width: $big-mobile) {
+      grid-template-columns: 300px;
+      gap: 20px;
+    }
+
+    @media screen and (max-width: $mobile) {
+      grid-template-columns: auto;
+      justify-items: end;
+      gap: 61px;
     }
 
     &::before {
       position: absolute;
       top: -74px;
-      right: 122px;
+      right: 108px;
       z-index: -1;
 
       width: 465px;
@@ -219,7 +261,23 @@
         height: 367px;
 
         top: -54px;
-        right: 162px;
+        right: 147px;
+      }
+
+      @media screen and (max-width: $tablet) {
+        top: -40px;
+        right: 52px;
+
+        width: 237px;
+        height: 237px;
+      }
+
+      @media screen and (max-width: $mobile) {
+        top: -19px;
+        right: 27px;
+
+        width: 119px;
+        height: 119px;
       }
     }
   }
@@ -234,6 +292,26 @@
 
     @media screen and (max-width: $small-desktop) {
       font-size: 85px;
+    }
+
+    @media screen and (max-width: $tablet) {
+      order: 1;
+      margin-right: -4px;
+      padding-bottom: 46px;
+
+      font-size: 54px;
+    }
+
+    @media screen and (max-width: $big-mobile) {
+      order: 0;
+      padding-bottom: 0;
+    }
+
+    @media screen and (max-width: $mobile) {
+      max-width: 128px;
+      margin-right: 0;
+
+      font-size: 28px;
     }
   }
 
@@ -254,11 +332,18 @@
     @media screen and (max-width: $small-desktop) {
       margin-left: 0;
     }
+
+    @media screen and (max-width: $small-desktop) {
+      max-width: 100%;
+    }
   }
 
   // .watch__image
 
   &__image {
+    @media screen and (max-width: $mobile) {
+      max-height: 187px / 261px * 100%;
+    }
   }
 }
 
