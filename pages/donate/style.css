@@ -756,6 +756,11 @@ form:valid .form-footer__button:active {
   line-height: 120%;
   color: #fe9013;
 }
+@media screen and (max-width: 639.98px) {
+  .feed__title {
+    font-size: 24px;
+  }
+}
 .feed__subtitle {
   align-self: start;
   margin-bottom: 60px;

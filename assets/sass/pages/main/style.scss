@@ -50,6 +50,14 @@
       margin-bottom: 142px;
     }
 
+    @media screen and (max-width: $tablet) {
+      margin-bottom: 80px;
+    }
+
+    @media screen and (max-width: $mobile) {
+      margin-bottom: 40px;
+    }
+
     &::before {
       position: absolute;
       top: -128px;
@@ -66,6 +74,36 @@
 
       @media screen and (max-width: $desktop) {
         display: none;
+      }
+
+      @media screen and (max-width: $big-tablet) {
+        top: -65px;
+        right: -103px;
+
+        display: block;
+        width: 230px / 640px * 100%;
+        height: 470px / 367px * 100%;
+        max-width: 230px;
+        max-height: 470px;
+
+        background-position: center left;
+      }
+
+      @media screen and (max-width: $tablet) {
+        width: 234px / 640px * 100%;
+        height: 483px / 367px * 100%;
+        max-width: 234px;
+        max-height: 483px;
+      }
+
+      @media screen and (max-width: $big-mobile) {
+        top: -66px;
+        right: -73px;
+
+        width: 105px / 320px * 100%;
+        height: 220px / 388px * 100%;
+        max-width: 105px;
+        max-height: 220px;
       }
     }
   }
@@ -348,6 +386,7 @@
 }
 
 .backstage {
+
   // .backstage__container
 
   &__container {
@@ -366,10 +405,14 @@
     flex: 1 0 (609px / 1160px * 100%);
     padding-bottom: 403px / 1160px * 100%;
 
-    @media screen and (max-width: $small-desktop) {
+    @media screen and (max-width: $desktop) {
       flex: 1 0 (455px / 940px * 100%);
       margin-top: 9px;
       padding-bottom: 408px / 940px * 100%;
+    }
+
+    @media screen and (max-width: $big-tablet) {
+      display: none;
     }
   }
 
@@ -381,6 +424,13 @@
   // .backstage__content
 
   &__content {
+    @media screen and (max-width: $big-tablet) {
+      padding-right: 105px;
+    }
+
+    @media screen and (max-width: $big-mobile) {
+      padding-right: 0;
+    }
   }
 
   // .backstage__title
@@ -393,6 +443,17 @@
     @media screen and (max-width: $small-desktop) {
       margin-bottom: 22px;
     }
+
+    @media screen and (max-width: $tablet) {
+      padding-left: 4px;
+    }
+
+    @media screen and (max-width: $mobile) {
+      margin-bottom: 10px;
+      margin-left: -1px;
+      padding-top: 1px;
+      padding-left: 0px;
+    }
   }
 
   // .backstage__description
@@ -401,6 +462,15 @@
     margin-bottom: 54px;
 
     line-height: 130%;
+
+    @media screen and (max-width: $tablet) {
+      margin-bottom: 30px;
+    }
+
+    @media screen and (max-width: $mobile) {
+      margin-bottom: 21px;
+      padding-left: 1px;
+    }
   }
 
   // .backstage__subtitle
@@ -409,12 +479,26 @@
     margin-bottom: 34px;
 
     @include subtitleFont;
+
+    @media screen and (max-width: $tablet) {
+      margin-bottom: 20px;
+      padding-left: 4px;
+    }
+
+    @media screen and (max-width: $mobile) {
+      margin-bottom: 10px;
+      padding-left: 1px;
+    }
   }
 
   // .backstage__text
 
   &__text {
     line-height: 137%;
+
+    @media screen and (max-width: $mobile) {
+      margin-left: -1px;
+    }
   }
 }
 
