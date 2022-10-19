@@ -9,6 +9,14 @@
   @include buttonFont;
   color: $white;
 
+  @media screen and (max-width: $big-mobile) {
+    min-width: 250px;
+  }
+
+  @media screen and (max-width: $mobile) {
+    min-width: 298px;
+  }
+
   &::before,
   &::after {
     position: absolute;
