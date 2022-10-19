@@ -18,6 +18,15 @@
   @media screen and (max-width: $small-desktop) {
     max-width: 970px;
   }
+
+  @media screen and (max-width: $tablet) {
+    max-width: 630px;
+  }
+
+  @media screen and (max-width: $mobile) {
+    max-width: 320px;
+    padding: 0 11px;
+  }
 }
 
 [class*='_ibg'] {

@@ -12,6 +12,10 @@
 
 .header {
   z-index: 2;
+
+  @media screen and (max-width: $tablet) {
+    z-index: 20;
+  }
 }
 
 .main {

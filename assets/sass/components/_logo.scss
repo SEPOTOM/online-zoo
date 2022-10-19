@@ -22,12 +22,28 @@
 
   &::before {
     position: absolute;
-    left: 10.63px;
-    bottom: 8.79px;
+    left: 10.83px / 82px * 100%;
+    bottom: 8.79px / 52px * 100%;
 
     color: $white;
 
     transform: scale(1.2);
+  }
+
+  @media screen and (max-width: $tablet) {
+    width: 46px;
+    min-height: 29px;
+    padding: 0;
+
+    border: none;
+
+    &::before {
+      left: 4px / 46px * 100%;
+      bottom: 4px / 29px * 100%;
+
+      font-weight: 300;
+      font-size: 11px;
+    }
   }
 }
 
@@ -35,4 +51,9 @@
   font-size: 19.0145px;
   line-height: 120%;
   text-align: center;
+
+  @media screen and (max-width: $tablet) {
+    font-weight: 300;
+    font-size: 12px;
+  }
 }

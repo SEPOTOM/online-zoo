@@ -15,4 +15,8 @@
     color: $whiteTransparent;
     cursor: default;
   }
+
+  @media screen and (max-width: $tablet) {
+    font-weight: 400;
+  }
 }
