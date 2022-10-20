@@ -230,6 +230,14 @@
     @media screen and (max-width: $small-desktop) {
       margin-bottom: 100px;
     }
+
+    @media screen and (max-width: $tablet) {
+      margin-bottom: 60px;
+    }
+
+    @media screen and (max-width: $mobile) {
+      margin-bottom: 30px;
+    }
   }
 
   // .main__testimonials
@@ -874,28 +882,40 @@
   position: relative;
 
   padding: 69px 0 100px;
-
-  @media screen and (max-width: $small-desktop) {
-    padding: 30px 0 50px;
-  }
-
+  
   &::before {
     position: absolute;
     top: 0;
     left: 0;
-
+    
     width: 100%;
     height: 100%;
-
+    
     background: $orangeGradient;
     opacity: 0.9;
-
+    
     content: '';
+  }
+  
+  @media screen and (max-width: $small-desktop) {
+    padding: 30px 0 50px;
+  }
+
+  @media screen and (max-width: $big-tablet) {
+    padding: 19px 0 20px;
+  }
+
+  @media screen and (max-width: $mobile) {
+    padding: 20px 0;
   }
 
   // .feed__container
 
   &__container {
+    @media screen and (max-width: $big-tablet) and (min-width: $medium-mobile) {
+      max-width: none;
+      padding: 0;
+    }
   }
 
   // .feed__content
@@ -914,6 +934,14 @@
 
       border-radius: 20px;
     }
+
+    @media screen and (max-width: $big-tablet) {
+      padding: 10px 20px 60px;
+    }
+
+    @media screen and (max-width: $mobile) {
+      padding: 21px 0 40px;
+    }
   }
 
   // .feed__title
@@ -930,6 +958,16 @@
       margin-bottom: 22px;
       padding-right: 0;
     }
+
+    @media screen and (max-width: $tablet) and (min-width: $medium-mobile) {
+      margin-bottom: 21px;
+
+      font-size: 42px;
+    }
+
+    @media screen and (max-width: $mobile) {
+      margin-bottom: 10px;
+    }
   }
 
   // .feed__subtitle
@@ -941,6 +979,18 @@
 
     @media screen and (max-width: $small-desktop) {
       margin-bottom: 20px;
+    }
+
+    @media screen and (max-width: $tablet) {
+      font-size: 22px;
+    }
+
+    @media screen and (max-width: $mobile) {
+      margin-bottom: 21px;
+      padding: 0 3px;
+
+      font-size: 18px;
+      text-align: center;
     }
   }
 
@@ -955,6 +1005,10 @@
     @media screen and (max-width: $small-desktop) {
       max-width: 813px;
     }
+
+    @media screen and (max-width: $mobile) {
+      display: none;
+    }
   }
 
   // .feed__text
@@ -967,6 +1021,14 @@
 
     @media screen and (max-width: $small-desktop) {
       margin-bottom: 41px;
+    }
+
+    @media screen and (max-width: $tablet) {
+      margin-bottom: 30px;
+    }
+
+    @media screen and (max-width: $mobile) {
+      display: none;
     }
   }
 
@@ -1023,6 +1085,14 @@
       margin: 0 1px 71px 0;
       padding-right: 0;
     }
+
+    @media screen and (max-width: $tablet) {
+      margin-bottom: 41px;
+    }
+
+    @media screen and (max-width: $mobile) {
+      margin-bottom: 29px;
+    }
   }
 
   // .feed__row
@@ -1054,6 +1124,10 @@
     gap: 39px;
   }
 
+  @media screen and (max-width: $tablet) {
+    gap: 19px;
+  }
+
   // .cards-feed__title
 
   &__title {
@@ -1067,26 +1141,71 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px 130px;
+
+    @media screen and (max-width: $big-tablet) {
+      gap: 20px 42px;
+    }
+
+    @media screen and (max-width: $tablet) {
+      margin-right: 11px;
+    }
+
+    @media screen and (max-width: $big-mobile) {
+      flex-direction: column;
+    }
+
+    @media screen and (max-width: $mobile) {
+      margin-right: 0;
+    }
   }
 
   // .cards-feed__item
 
   &__item {
+    position: relative;
+
     display: flex;
     flex-direction: column;
     gap: 30px;
     max-width: 168px;
+    
+    &::before {
+      position: absolute;
+      top: 61px;
+      left: -100px;
 
-    &:not(:nth-child(3n - 2)) {
-      position: relative;
+      font-size: 36px;
 
-      &::before {
-        position: absolute;
-        top: 61px;
-        left: -100px;
-
-        font-size: 36px;
+      &:nth-child(3n - 2) {
+        display: none;
       }
+
+      @media screen and (max-width: $big-tablet) {
+        top: -17px;
+        left: -75px;
+        z-index: 3;
+
+        font-size: 29px;
+
+        color: $green;
+      }
+
+      @media screen and (max-width: $big-mobile) {
+        top: -50px;
+        left: 140px;
+
+        transform: rotate(84deg);
+      }
+    }
+
+    &:nth-child(3n - 2) {
+      &::before {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: $mobile) {
+      gap: 10px;
     }
   }
 
@@ -1134,6 +1253,11 @@
 
   &__text {
     @include bodyFont;
+
+    @media screen and (max-width: $mobile) {
+      min-height: 44px;
+      padding-bottom: 9px;
+    }
   }
 }
 
