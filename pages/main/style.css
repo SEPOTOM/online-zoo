@@ -591,6 +591,16 @@ form:valid .form-footer__button:active {
   color: #ffffff;
   background-color: #111115;
 }
+@media screen and (max-width: 640px) {
+  .footer {
+    padding: 12px 0 11px;
+  }
+}
+@media screen and (max-width: 639.98px) {
+  .footer {
+    padding: 20px 0;
+  }
+}
 .footer__container {
   display: grid;
   grid-template-columns: 300px auto 367px;
@@ -602,10 +612,54 @@ form:valid .form-footer__button:active {
     grid-template-columns: 200px auto 285px;
   }
 }
+@media screen and (max-width: 999.98px) and (min-width: 639.98px) {
+  .footer__container {
+    grid-template-columns: 351px auto;
+    grid-template-rows: 52px;
+    gap: 32px 20px;
+  }
+}
+@media screen and (max-width: 639.98px) {
+  .footer__container {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 30px 20px;
+  }
+}
 .footer__main-link {
   align-self: start;
   border-width: 0.5px;
   border-color: rgba(255, 255, 255, 0.5);
+}
+@media screen and (max-width: 640px) {
+  .footer__main-link {
+    width: 82px;
+    min-height: 52px;
+    margin: 1px 0 0 1px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+  .footer__main-link::before {
+    left: 13.2073170732%;
+    bottom: 16.9038461538%;
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 639.98px) {
+  .footer__main-link {
+    width: auto;
+    min-height: 0;
+    margin: 0;
+    border: none;
+  }
+  .footer__main-link::before {
+    left: 73px;
+    bottom: 7px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .footer__logo {
+    font-size: 19px;
+  }
 }
 .footer__form {
   grid-column: span 2;
@@ -617,14 +671,57 @@ form:valid .form-footer__button:active {
     margin-right: 32px;
   }
 }
+@media screen and (max-width: 999.98px) {
+  .footer .footer__form {
+    display: none;
+  }
+}
 .footer__button {
   z-index: 1;
   grid-column: span 3;
   justify-self: start;
   margin-bottom: 8px;
 }
-.footer__navigation {
-  justify-self: end;
+@media screen and (max-width: 999.98px) {
+  .footer__button {
+    grid-column: span 1;
+    align-self: start;
+    order: 2;
+  }
+}
+@media screen and (max-width: 639.98px) {
+  .footer__button {
+    justify-self: center;
+    margin-bottom: 0;
+  }
+}
+@media screen and (max-width: 999.98px) and (min-width: 639.98px) {
+  .footer__socials {
+    grid-row: span 2;
+    justify-self: end;
+    align-self: start;
+    order: 1;
+  }
+}
+@media screen and (max-width: 640px) and (min-width: 639.98px) {
+  .footer__socials {
+    margin-bottom: 11px;
+  }
+}
+@media screen and (min-width: 999.98px) {
+  .footer__navigation {
+    justify-self: end;
+  }
+}
+@media screen and (max-width: 999.98px) {
+  .footer__navigation {
+    order: 3;
+  }
+}
+@media screen and (max-width: 639.98px) {
+  .footer__navigation {
+    order: 5;
+  }
 }
 .footer__list {
   display: flex;
@@ -634,6 +731,18 @@ form:valid .form-footer__button:active {
 @media screen and (max-width: 1000px) {
   .footer__list {
     gap: 20px 48px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .footer__list {
+    margin-left: 1px;
+    gap: 20px 37px;
+  }
+}
+@media screen and (max-width: 639.98px) {
+  .footer__list {
+    margin-left: 0;
+    gap: 20px 30px;
   }
 }
 @media screen and (max-width: 1000px) {
@@ -652,6 +761,22 @@ form:valid .form-footer__button:active {
 }
 .footer__designer:active {
   color: #4b9200;
+}
+@media screen and (max-width: 999.98px) {
+  .footer__designer {
+    order: 4;
+  }
+}
+@media screen and (max-width: 639.98px) {
+  .footer__designer {
+    justify-self: center;
+  }
+}
+@media screen and (max-width: 320px) {
+  .footer__designer {
+    justify-self: end;
+    font-size: 15px;
+  }
 }
 .footer__text {
   font-weight: 100;
@@ -705,8 +830,23 @@ form:valid .form-footer__button:active {
   color: #bdbdbd;
 }
 .socials-footer {
-  display: grid;
+  display: flex;
   gap: 10px;
+}
+@media screen and (min-width: 639.98px) {
+  .socials-footer {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 640px) {
+  .socials-footer {
+    gap: 20px;
+  }
+}
+@media screen and (max-width: 639.98px) {
+  .socials-footer {
+    gap: 30px;
+  }
 }
 .socials-footer__link {
   display: flex;
@@ -736,6 +876,11 @@ form:valid .form-footer__button:active {
 }
 .socials-footer__text {
   line-height: 140%;
+}
+@media screen and (max-width: 640px) {
+  .socials-footer__text {
+    display: none;
+  }
 }
 
 .header {
