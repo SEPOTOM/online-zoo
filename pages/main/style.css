@@ -967,6 +967,16 @@ form:valid .form-footer__button:active {
     margin-bottom: 140px;
   }
 }
+@media screen and (max-width: 640px) {
+  .main__testimonials {
+    margin-bottom: 80px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .main__testimonials {
+    margin-bottom: 60px;
+  }
+}
 .main__testimonials::before {
   position: absolute;
   right: 0;
@@ -985,6 +995,27 @@ form:valid .form-footer__button:active {
     height: 53.9101497504%;
     max-width: 197px;
     max-height: 324px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .main__testimonials::before {
+    right: -8px;
+    bottom: -150px;
+    width: 23.90625%;
+    height: 38.8257575758%;
+    max-width: 153px;
+    max-height: 205px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .main__testimonials::before {
+    right: -8px;
+    bottom: -105px;
+    width: 19.6875%;
+    height: 23.5173824131%;
+    max-width: 63px;
+    max-height: 115px;
+    transform: rotate(-15deg);
   }
 }
 
@@ -1844,6 +1875,9 @@ form:valid .form-footer__button:active {
   }
 }
 
+.testimonials__container {
+  display: grid;
+}
 .testimonials__title {
   margin-bottom: 47px;
   font-size: 36px;
@@ -1862,6 +1896,17 @@ form:valid .form-footer__button:active {
     padding-top: 1px;
   }
 }
+@media screen and (max-width: 640px) {
+  .testimonials__title {
+    margin-right: 4px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .testimonials__title {
+    margin-bottom: 19px;
+    margin-right: 0;
+  }
+}
 .testimonials__slider {
   display: grid;
   gap: 21px;
@@ -1869,12 +1914,27 @@ form:valid .form-footer__button:active {
 }
 @media screen and (max-width: 1000px) {
   .testimonials__slider {
-    margin-bottom: 50px;
+    margin-bottom: 51px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .testimonials__slider {
+    margin-bottom: 40px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .testimonials__slider {
+    margin-bottom: 29px;
   }
 }
 .testimonials__swiper {
   display: flex;
-  gap: 30px;
+  gap: 15px 30px;
+}
+@media screen and (max-width: 999.98px) {
+  .testimonials__swiper {
+    flex-direction: column;
+  }
 }
 @media screen and (max-width: 1599.98px) {
   .testimonials__slide._hide {
@@ -1884,6 +1944,11 @@ form:valid .form-footer__button:active {
 @media screen and (max-width: 1000px) {
   .testimonials__row {
     padding-right: 12px;
+  }
+}
+@media screen and (max-width: 999.98px) {
+  .testimonials__row {
+    display: none;
   }
 }
 .testimonials__slipper {
@@ -1928,6 +1993,16 @@ form:valid .form-footer__button:active {
 .testimonials__toggler:hover {
   background-color: #e47209;
 }
+.testimonials__button {
+  justify-self: start;
+}
+@media screen and (max-width: 640px) {
+  .testimonials__button {
+    justify-self: center;
+    min-width: 240px;
+  }
+}
+
 .slide-testimonials {
   position: relative;
   max-width: 268px;
@@ -1945,6 +2020,17 @@ form:valid .form-footer__button:active {
 @media screen and (max-width: 1000px) {
   .slide-testimonials {
     padding: 15px 14.5px 41px 16px;
+  }
+}
+@media screen and (max-width: 999.98px) {
+  .slide-testimonials {
+    max-height: 109px;
+    padding: 15px 29px 8px 12px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .slide-testimonials {
+    padding: 10px 29px 12px 12px;
   }
 }
 .slide-testimonials::before {
@@ -1968,6 +2054,11 @@ form:valid .form-footer__button:active {
   grid-template-columns: 37px auto;
   gap: 1px 10px;
 }
+@media screen and (max-width: 320px) {
+  .slide-testimonials__header {
+    gap: 1px 6px;
+  }
+}
 .slide-testimonials__picture {
   grid-row: span 2;
   max-height: 37px;
@@ -1982,6 +2073,11 @@ form:valid .form-footer__button:active {
   line-height: 120%;
   color: #000000;
 }
+@media screen and (max-width: 320px) {
+  .slide-testimonials__name {
+    padding-top: 1px;
+  }
+}
 .slide-testimonials__info {
   display: flex;
   gap: 6px;
@@ -1991,9 +2087,9 @@ form:valid .form-footer__button:active {
   line-height: 120%;
   color: #bdbdbd;
 }
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 320px) {
   .slide-testimonials__info {
-    font-size: 12px;
+    gap: 5px;
   }
 }
 .slide-testimonials__content {
@@ -2005,6 +2101,11 @@ form:valid .form-footer__button:active {
     max-height: 287px;
   }
 }
+@media screen and (max-width: 999.98px) {
+  .slide-testimonials__content {
+    max-height: 38px;
+  }
+}
 .slide-testimonials__text {
   position: relative;
   font-weight: 300;
@@ -2014,6 +2115,6 @@ form:valid .form-footer__button:active {
 }
 @media screen and (max-width: 640px) {
   .slide-testimonials__text {
-    font-size: 12px;
+    margin-left: 6px;
   }
 }

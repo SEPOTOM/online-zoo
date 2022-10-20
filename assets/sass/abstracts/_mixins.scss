@@ -28,10 +28,6 @@
   font-weight: 300;
   font-size: 15px;
   line-height: 120%;
-
-  @media screen and (max-width: $tablet) {
-    font-size: 12px;
-  }
 }
 
 @mixin h3Font {
