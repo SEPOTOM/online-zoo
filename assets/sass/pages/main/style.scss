@@ -119,6 +119,14 @@
       margin-bottom: 140px;
     }
 
+    @media screen and (max-width: $tablet) {
+      margin-bottom: 100px;
+    }
+
+    @media screen and (max-width: $mobile) {
+      margin-bottom: 60px;
+    }
+
     &::before,
     &::after {
       position: absolute;
@@ -128,6 +136,14 @@
 
       @media screen and (max-width: $desktop) {
         bottom: -140px;
+      }
+
+      @media screen and (max-width: $tablet) {
+        bottom: -100px;
+      }
+
+      @media screen and (max-width: $mobile) {
+        bottom: -60px;
       }
     }
 
@@ -149,6 +165,24 @@
 
         background: url('../../assets/images/pets/palm-decor-small.png') bottom left / contain no-repeat;
       }
+
+      @media screen and (max-width: $tablet) {
+        left: -59px;
+
+        max-width: 193px;
+        max-height: 220px;
+        width: 193px / 640px * 100%;
+        height: 220px / 870px * 100%;
+      }
+
+      @media screen and (max-width: $medium-mobile) {
+        left: -11px;
+
+        max-width: 69px;
+        max-height: 83px;
+        width: 69px / 320px * 100%;
+        height: 83px / 1461px * 100%;
+      }
     }
 
     &::after {
@@ -166,6 +200,24 @@
         max-height: 181px;
         width: 242px / 940px * 100%;
         height: 181px / 940px * 100%;
+      }
+
+      @media screen and (max-width: $tablet) {
+        max-width: 175px;
+        max-height: 131px;
+        width: 175px / 640px * 100%;
+        height: 131px / 870px * 100%;
+      }
+
+      @media screen and (max-width: $medium-mobile) {
+        right: -21px;
+
+        margin-bottom: -4px;
+
+        max-width: 94px;
+        max-height: 80px;
+        width: 94px / 320px * 100%;
+        height: 80px / 1461px * 100%;
       }
     }
   }
@@ -508,10 +560,18 @@
   &__container {
     display: grid;
     justify-items: center;
-    gap: 80px;
+    gap: 79px;
 
     @media screen and (max-width: $desktop) {
-      gap: 81px;
+      gap: 80px;
+    }
+
+    @media screen and (max-width: $tablet) {
+      gap: 60px;
+    }
+
+    @media screen and (max-width: $mobile) {
+      gap: 19px;
     }
   }
 
@@ -540,15 +600,40 @@
       gap: 92px 29px;
       padding: 0 2px;
     }
+
+    @media screen and (max-width: $big-tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: $tablet) {
+      gap: 92px 30px;
+      padding: 0;
+    }
+
+    @media screen and (max-width: $medium-mobile) {
+      grid-template-columns: auto;
+      gap: 20px 30px;
+    }
+
+    @media screen and (max-width: $mobile) {
+      padding: 0 7px 0 6px;
+    }
   }
 
   // .pets__card
 
   &__card {
+    display: grid;
     padding: 1px;
 
     background: $orange;
     border-radius: 5px;
+
+    @media screen and (max-width: $big-tablet) {
+      &._hide {
+        display: none;
+      }
+    }
   }
 
   &__swipe-to-left,
@@ -558,10 +643,14 @@
 
     @extend %sliderButton;
 
-    transform: translate(0, calc(-50% - 2px));
+    transform: translate(0, -50%);
 
-    @media screen and (max-width: $desktop) {
-      transform: translate(0, -50%);
+    @media screen and (max-width: $tablet) {
+      margin-top: -4px;
+    }
+
+    @media screen and (max-width: $medium-mobile) {
+      display: none;
     }
   }
 
@@ -572,6 +661,14 @@
 
     @media screen and (max-width: $desktop) {
       left: 398px / 1160px * 100%;
+    }
+
+    @media screen and (max-width: $tablet) {
+      left: 223px / 600px * 100%;
+    }
+
+    @media screen and (max-width: $big-mobile) {
+      left: 150px / 600px * 100%;
     }
 
     .pets__icon {
@@ -587,6 +684,14 @@
     @media screen and (max-width: $desktop) {
       right: 398px / 1160px * 100%;
     }
+
+    @media screen and (max-width: $tablet) {
+      right: 223px / 600px * 100%;
+    }
+
+    @media screen and (max-width: $big-mobile) {
+      right: 150px / 600px * 100%;
+    }
   }
 
   // .pets__button
@@ -596,11 +701,16 @@
 
     &::after {
       background: $orangeColor;
+
+      @media screen and (max-width: $tablet) {
+        background: $orange;
+      }
     }
   }
 }
 
 .card-pets {
+  display: grid;
   border-radius: 5px;
   overflow: hidden;
 
@@ -608,7 +718,8 @@
 
   &__picture {
     display: block;
-    padding-bottom: 366px / 364px * 100%;
+    max-height: 365px;
+    padding-bottom: 367px / 364px * 100%;
 
     overflow: hidden;
 
@@ -642,6 +753,10 @@
         transform: scale(1.054);
       }
     }
+
+    @media screen and (max-width: $small-desktop) {
+      max-height: 293px;
+    }
   }
 
   // .card-pets__image
@@ -671,6 +786,10 @@
     overflow: auto;
 
     transition: top 0.3s ease 0s;
+
+    @media screen and (max-width: $tablet) {
+      padding: 20px 10px 10px;
+    }
   }
 
   // .card-pets__title
@@ -682,6 +801,10 @@
       margin: auto;
       margin-bottom: 10px;
     }
+
+    @media screen and (max-width: $tablet) {
+      font-size: 13px;
+    }
   }
 
   // .card-pets__description
@@ -691,6 +814,10 @@
     margin-top: 0;
 
     @include bodyFont;
+
+    @media screen and (max-width: $tablet) {
+      font-size: 12px;
+    }
   }
 
   // .card-pets__content
@@ -700,17 +827,23 @@
     grid-template-columns: auto 48px;
     grid-auto-flow: column;
     align-items: end;
-    padding: 8px 7px 13px 15px;
+    margin-top: -1px;
+    padding: 7px 7px 13px 15px;
 
     color: $black;
 
     background-color: $white;
+
+    @media screen and (max-width: $tablet) {
+      grid-template-columns: auto 37px;
+      padding: 7px 6px 9px 12px;
+    }
   }
 
   // .card-pets__place
 
   &__place {
-    margin-top: -2px;
+    margin-top: -4px;
 
     @include smallParagraphFont;
   }
@@ -720,10 +853,19 @@
   &__icon {
     grid-row: span 2;
     justify-self: end;
+    max-width: 100%;
     max-height: 38px;
+    
+    &_margin {
+      margin: 3px 4px 0 0;
+    }
 
-    &_padding {
-      padding: 2px 4px 0 0;
+    @media screen and (max-width: $tablet) {
+      max-height: 29px;
+
+      &_margin {
+        margin: 0 2px 1px 0;
+      }
     }
   }
 }
