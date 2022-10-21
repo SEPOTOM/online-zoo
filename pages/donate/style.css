@@ -859,8 +859,47 @@ form:valid .form-footer__button:active {
   margin-top: -4px;
   padding-bottom: 390px;
 }
+@media screen and (max-width: 1000px) {
+  .main__picture {
+    margin-top: 0;
+  }
+}
+@media screen and (max-width: 999.98px) {
+  .main__picture {
+    padding-bottom: 335px;
+  }
+}
+@media screen and (max-width: 639.98px) {
+  .main__picture {
+    padding-bottom: 187px;
+  }
+}
 .main__image {
   z-index: -1;
+}
+@media screen and (max-width: 1000px) and (min-width: 999.98px) {
+  .main .main__image {
+    left: -17.2%;
+    width: auto;
+  }
+}
+@media screen and (max-width: 640px) {
+  .main .main__image {
+    left: -42.5%;
+    z-index: 0;
+    width: auto;
+    margin-top: 34px;
+  }
+}
+@media screen and (max-width: 639.98px) {
+  .main .main__image {
+    left: -20%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .main .main__image {
+    left: -46.25%;
+  }
 }
 .main__body {
   display: grid;
