@@ -24,6 +24,16 @@ function openHeaderMenu() {
   header.classList.add('_menu-open');
 }
 
+function changeFormRangeActive(pageWidth) {
+  const activeItem = document.querySelector('[data-active]')
+
+  if (pageWidth <= 840) {
+    activeItem.classList.add('_active');
+  } else {
+    activeItem.classList.remove('_active');
+  }
+}
+
 // Footer form logic
 
 {
@@ -92,6 +102,8 @@ function openHeaderMenu() {
     removeNavigationActiveHeader();
   }
 
+  changeFormRangeActive(pageWidth);
+
   window.addEventListener('resize', () => {
     pageWidth = Math.max(document.body.offsetWidth, document.documentElement.offsetWidth, document.body.clientWidth, document.documentElement.clientWidth);
 
@@ -102,5 +114,7 @@ function openHeaderMenu() {
     if (pageWidth > 640) {
       closeHeaderMenu();
     }
+
+  changeFormRangeActive(pageWidth);
   });
 }

@@ -36,6 +36,11 @@
               </li>
             </ul>
           </nav>
+          <button class="header__menu" type="button">
+            <span class="header__line"></span>
+            <span class="header__line"></span>
+            <span class="header__line"></span>
+          </button>
         </div>
       </header>
       <main class="main">
@@ -58,7 +63,7 @@
                 <div class="feed__media-block">
                   <div class="feed__content _icon-x">
                     <p class="feed__count">4</p>
-                    <p class="feed__text">Panda diet for the day.</p>
+                    <p class="feed__text feed__text_small">Panda diet for the day.</p>
                   </div>
                   <div class="feed__picture">
                     <img class="feed__image" src="../../assets/icons/giant-panda.svg" alt="Giant Panda icon" />
@@ -67,15 +72,15 @@
                 <form class="feed__form form-feed" action="#">
                   <p class="form-feed__text">Amount</p>
                   <ul class="form-feed__range">
-                    <li class="form-feed__item">
+                    <li class="form-feed__item _hide1">
                       <span class="form-feed__dot"></span>
                       <p class="form-feed__amount _icon-dollar">5000</p>
                     </li>
-                    <li class="form-feed__item">
+                    <li class="form-feed__item _hide2">
                       <span class="form-feed__dot"></span>
                       <p class="form-feed__amount _icon-dollar">2000</p>
                     </li>
-                    <li class="form-feed__item _active">
+                    <li class="form-feed__item _active _hide3">
                       <span class="form-feed__dot"></span>
                       <p class="form-feed__amount _icon-dollar">1000</p>
                     </li>
@@ -87,7 +92,7 @@
                       <span class="form-feed__dot"></span>
                       <p class="form-feed__amount _icon-dollar">250</p>
                     </li>
-                    <li class="form-feed__item">
+                    <li class="form-feed__item" data-active>
                       <span class="form-feed__dot"></span>
                       <p class="form-feed__amount _icon-dollar">100</p>
                     </li>
@@ -111,7 +116,7 @@
                   </div>
                   <button class="form-feed__button" type="submit">Feed a friend now</button>
                 </form>
-                <p class="feed__text feed__text_margin-left">Share with your friends on social networks</p>
+                <p class="feed__text feed__text_margin">Share with your friends on social networks</p>
               </div>
             </div>
           </section>
