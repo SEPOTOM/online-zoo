@@ -42,7 +42,7 @@
     @media screen and (max-width: $small-desktop) and (min-width: $big-tablet) {
       .main & {
         left: -172px / 1000px * 100%;
-  
+
         width: auto;
       }
     }
@@ -297,7 +297,7 @@
       font-size: 14px;
 
       transform: translate(100%, 0);
-      
+
       @media screen and (max-width: $big-mobile) {
         top: 73px;
         right: -5px;

@@ -25,7 +25,7 @@ function openHeaderMenu() {
 }
 
 function changeFormRangeActive(pageWidth) {
-  const activeItem = document.querySelector('[data-active]')
+  const activeItem = document.querySelector('[data-active]');
 
   if (pageWidth <= 840) {
     activeItem.classList.add('_active');
@@ -115,6 +115,6 @@ function changeFormRangeActive(pageWidth) {
       closeHeaderMenu();
     }
 
-  changeFormRangeActive(pageWidth);
+    changeFormRangeActive(pageWidth);
   });
 }

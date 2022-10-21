@@ -1,10 +1,7 @@
 @font-face {
   font-family: 'icons';
-  src:  url('../../assets/iconsfont/icons.eot?z61rwy');
-  src:  url('../../assets/iconsfont/icons.eot?z61rwy#iefix') format('embedded-opentype'),
-    url('../../assets/iconsfont/icons.ttf?z61rwy') format('truetype'),
-    url('../../assets/iconsfont/icons.woff?z61rwy') format('woff'),
-    url('../../assets/iconsfont/icons.svg?z61rwy#icons') format('svg');
+  src: url('../../assets/iconsfont/icons.eot?z61rwy');
+  src: url('../../assets/iconsfont/icons.eot?z61rwy#iefix') format('embedded-opentype'), url('../../assets/iconsfont/icons.ttf?z61rwy') format('truetype'), url('../../assets/iconsfont/icons.woff?z61rwy') format('woff'), url('../../assets/iconsfont/icons.svg?z61rwy#icons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -27,31 +24,31 @@
 }
 
 ._icon-curved-arrow::before {
-  content: "\e908";
+  content: '\e908';
 }
-._icon-x:before {
-  content: "\e900";
+._icon-x::before {
+  content: '\e900';
 }
 ._icon-hollow-arrow::before {
-  content: "\e901";
+  content: '\e901';
 }
 ._icon-facebook::before {
-  content: "\e902";
+  content: '\e902';
 }
 ._icon-instagram::before {
-  content: "\e903";
+  content: '\e903';
 }
 ._icon-twitter::before {
-  content: "\e904";
+  content: '\e904';
   font-size: 14px;
 }
 ._icon-youtube::before {
-  content: "\e905";
+  content: '\e905';
   font-size: 13px;
 }
 ._icon-dollar::before {
-  content: "\e906";
+  content: '\e906';
 }
 ._icon-bamboo::before {
-  content: "\e907";
+  content: '\e907';
 }

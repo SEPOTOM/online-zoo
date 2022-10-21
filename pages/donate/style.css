@@ -19,7 +19,7 @@ body {
 body {
   color: #333b41;
   line-height: 1;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
@@ -32,7 +32,7 @@ body {
 input,
 button,
 textarea {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: inherit;
 }
 
@@ -74,52 +74,52 @@ h6 {
 }
 
 @font-face {
-  font-family: "Roboto";
-  src: url("../../assets/fonts/Roboto-Light.woff2") format("woff2"), url("../../assets/fonts/Roboto-Light.woff") format("woff");
+  font-family: 'Roboto';
+  src: url('../../assets/fonts/Roboto-Light.woff2') format('woff2'), url('../../assets/fonts/Roboto-Light.woff') format('woff');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Roboto";
-  src: url("../../assets/fonts/Roboto-Bold.woff2") format("woff2"), url("../../assets/fonts/Roboto-Bold.woff") format("woff");
+  font-family: 'Roboto';
+  src: url('../../assets/fonts/Roboto-Bold.woff2') format('woff2'), url('../../assets/fonts/Roboto-Bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Roboto";
-  src: url("../../assets/fonts/Roboto-Medium.woff2") format("woff2"), url("../../assets/fonts/Roboto-Medium.woff") format("woff");
+  font-family: 'Roboto';
+  src: url('../../assets/fonts/Roboto-Medium.woff2') format('woff2'), url('../../assets/fonts/Roboto-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Roboto";
-  src: url("../../assets/fonts/Roboto-Regular.woff2") format("woff2"), url("../../assets/fonts/Roboto-Regular.woff") format("woff");
+  font-family: 'Roboto';
+  src: url('../../assets/fonts/Roboto-Regular.woff2') format('woff2'), url('../../assets/fonts/Roboto-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Roboto";
-  src: url("../../assets/fonts/Roboto-Thin.woff2") format("woff2"), url("../../assets/fonts/Roboto-Thin.woff") format("woff");
+  font-family: 'Roboto';
+  src: url('../../assets/fonts/Roboto-Thin.woff2') format('woff2'), url('../../assets/fonts/Roboto-Thin.woff') format('woff');
   font-weight: 100;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "icons";
-  src: url("../../assets/iconsfont/icons.eot?z61rwy");
-  src: url("../../assets/iconsfont/icons.eot?z61rwy#iefix") format("embedded-opentype"), url("../../assets/iconsfont/icons.ttf?z61rwy") format("truetype"), url("../../assets/iconsfont/icons.woff?z61rwy") format("woff"), url("../../assets/iconsfont/icons.svg?z61rwy#icons") format("svg");
+  font-family: 'icons';
+  src: url('../../assets/iconsfont/icons.eot?z61rwy');
+  src: url('../../assets/iconsfont/icons.eot?z61rwy#iefix') format('embedded-opentype'), url('../../assets/iconsfont/icons.ttf?z61rwy') format('truetype'), url('../../assets/iconsfont/icons.woff?z61rwy') format('woff'), url('../../assets/iconsfont/icons.svg?z61rwy#icons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
-[class^=_icon-]::before,
-[class*=" _icon-"]::before {
+[class^='_icon-']::before,
+[class*=' _icon-']::before {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: "icons" !important;
+  font-family: 'icons' !important;
   speak: never;
   font-style: normal;
   font-weight: normal;
@@ -132,41 +132,41 @@ h6 {
 }
 
 ._icon-curved-arrow::before {
-  content: "\e908";
+  content: '\e908';
 }
 
-._icon-x:before {
-  content: "\e900";
+._icon-x::before {
+  content: '\e900';
 }
 
 ._icon-hollow-arrow::before {
-  content: "\e901";
+  content: '\e901';
 }
 
 ._icon-facebook::before {
-  content: "\e902";
+  content: '\e902';
 }
 
 ._icon-instagram::before {
-  content: "\e903";
+  content: '\e903';
 }
 
 ._icon-twitter::before {
-  content: "\e904";
+  content: '\e904';
   font-size: 14px;
 }
 
 ._icon-youtube::before {
-  content: "\e905";
+  content: '\e905';
   font-size: 13px;
 }
 
 ._icon-dollar::before {
-  content: "\e906";
+  content: '\e906';
 }
 
 ._icon-bamboo::before {
-  content: "\e907";
+  content: '\e907';
 }
 
 .wrapper {
@@ -179,39 +179,39 @@ h6 {
   flex: 1 1 auto;
 }
 
-[class*=__container] {
+[class*='__container'] {
   max-width: 1190px;
   margin: 0 auto;
   padding: 0 15px;
 }
 @media screen and (max-width: 1000px) {
-  [class*=__container] {
+  [class*='__container'] {
     max-width: 970px;
   }
 }
 @media screen and (max-width: 640px) {
-  [class*=__container] {
+  [class*='__container'] {
     max-width: 630px;
   }
 }
 @media screen and (max-width: 320px) {
-  [class*=__container] {
+  [class*='__container'] {
     max-width: 320px;
     padding: 0 11px;
   }
 }
 
-[class*=_ibg] {
+[class*='_ibg'] {
   position: relative;
 }
-[class*=_ibg] img {
+[class*='_ibg'] img {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .form-feed__button {
@@ -235,7 +235,8 @@ h6 {
     min-width: 298px;
   }
 }
-.form-feed__button::before, .form-feed__button::after {
+.form-feed__button::before,
+.form-feed__button::after {
   position: absolute;
   top: 0;
   left: 0;
@@ -243,7 +244,7 @@ h6 {
   width: 100%;
   height: 100%;
   border-radius: 25px;
-  content: "";
+  content: '';
 }
 .form-feed__button::before {
   background-color: #e47209;
@@ -282,7 +283,8 @@ h6 {
   text-transform: uppercase;
   color: #ffffff;
 }
-.footer__button::before, .footer__button::after {
+.footer__button::before,
+.footer__button::after {
   position: absolute;
   top: 0;
   left: 0;
@@ -290,7 +292,7 @@ h6 {
   width: 100%;
   height: 100%;
   border-radius: 5px;
-  content: "";
+  content: '';
 }
 .footer__button::before {
   background-color: #e47209;
@@ -346,7 +348,8 @@ form:valid .form-footer__button:active {
   transition: all 0s ease 0s;
 }
 
-.footer__main-link, .header__main-link {
+.footer__main-link,
+.header__main-link {
   position: relative;
   display: flex;
   justify-content: center;
@@ -358,13 +361,15 @@ form:valid .form-footer__button:active {
   border-radius: 2px;
   background: linear-gradient(113.96deg, #f9804b 1.49%, #fe9013 101.44%);
   -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
   transition: color 0.3s ease 0s;
 }
-.footer__main-link:hover, .header__main-link:hover {
+.footer__main-link:hover,
+.header__main-link:hover {
   color: rgba(255, 255, 255, 0);
 }
-.footer__main-link::before, .header__main-link::before {
+.footer__main-link::before,
+.header__main-link::before {
   position: absolute;
   left: 13.2073170732%;
   bottom: 16.9038461538%;
@@ -372,13 +377,15 @@ form:valid .form-footer__button:active {
   transform: scale(1.2);
 }
 @media screen and (max-width: 640px) {
-  .footer__main-link, .header__main-link {
+  .footer__main-link,
+  .header__main-link {
     width: 46px;
     min-height: 29px;
     padding: 0;
     border: none;
   }
-  .footer__main-link::before, .header__main-link::before {
+  .footer__main-link::before,
+  .header__main-link::before {
     left: 8.6956521739%;
     bottom: 13.7931034483%;
     font-weight: 300;
@@ -386,35 +393,41 @@ form:valid .form-footer__button:active {
   }
 }
 
-.footer__logo, .header__logo {
+.footer__logo,
+.header__logo {
   font-size: 19.0145px;
   line-height: 120%;
   text-align: center;
 }
 @media screen and (max-width: 640px) {
-  .footer__logo, .header__logo {
+  .footer__logo,
+  .header__logo {
     font-weight: 300;
     font-size: 12px;
   }
 }
 
-.footer__link, .header__link {
+.footer__link,
+.header__link {
   font-weight: 500;
   line-height: 140%;
   background: linear-gradient(113.96deg, #f9804b 1.49%, #fe9013 101.44%);
   -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
   transition: color 0.3s ease 0s;
 }
-.footer__link:hover, .header__link:hover {
+.footer__link:hover,
+.header__link:hover {
   color: rgba(255, 255, 255, 0);
 }
-._active.footer__link, ._active.header__link {
+._active.footer__link,
+._active.header__link {
   color: rgba(255, 255, 255, 0);
   cursor: default;
 }
 @media screen and (max-width: 640px) {
-  .footer__link, .header__link {
+  .footer__link,
+  .header__link {
     font-weight: 400;
   }
 }
@@ -824,7 +837,7 @@ form:valid .form-footer__button:active {
   display: flex;
   align-items: flex-end;
   -moz-column-gap: 12px;
-       column-gap: 12px;
+  column-gap: 12px;
 }
 .socials-footer__link:hover .socials-footer__text {
   text-decoration: underline;
@@ -1297,7 +1310,7 @@ form:valid .form-footer__button:active {
   height: 27px;
   background-color: #404950;
   border-radius: 2px;
-  content: "";
+  content: '';
 }
 @media screen and (max-width: 400px) {
   .form-feed__range::before {
@@ -1312,7 +1325,7 @@ form:valid .form-footer__button:active {
   left: 30px;
   height: 2px;
   background-color: #72828e;
-  content: "";
+  content: '';
 }
 @media screen and (max-width: 1599.98px) {
   .form-feed__range::after {
@@ -1401,22 +1414,25 @@ form:valid .form-footer__button:active {
     margin: 0 43px 10px 17px;
   }
 }
-.form-feed__dot::before, .form-feed__dot::after {
+.form-feed__dot::before,
+.form-feed__dot::after {
   position: absolute;
   top: 50%;
   left: 50%;
   border: 2px solid transparent;
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  content: "";
+  content: '';
 }
 @media screen and (max-width: 400px) {
-  .form-feed__dot::before, .form-feed__dot::after {
+  .form-feed__dot::before,
+  .form-feed__dot::after {
     border-width: 1px;
     transform: translate(-53%, -53%);
   }
 }
-._active .form-feed__dot::before, ._active .form-feed__dot::after {
+._active .form-feed__dot::before,
+._active .form-feed__dot::after {
   border-color: #fe9013;
 }
 .form-feed__dot::before {
@@ -1551,7 +1567,8 @@ form:valid .form-footer__button:active {
   line-height: 140%;
   color: #929699;
 }
-.form-feed__price-field::-webkit-outer-spin-button, .form-feed__price-field::-webkit-inner-spin-button {
+.form-feed__price-field::-webkit-outer-spin-button,
+.form-feed__price-field::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -1618,7 +1635,7 @@ form:valid .form-footer__button:active {
   border: 1px solid #fe9013;
   border-radius: 50%;
   cursor: pointer;
-  content: "";
+  content: '';
 }
 .form-feed__button {
   z-index: 2;
