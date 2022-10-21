@@ -255,6 +255,10 @@
       margin: 0 18px 48px 0;
     }
 
+    @media screen and (max-width: $tablet) {
+      margin: 0 18px 41px 0;
+    }
+
     @media screen and (max-width: $big-mobile) {
       gap: 20px 36px;
       margin: 0 13px 41px 0;

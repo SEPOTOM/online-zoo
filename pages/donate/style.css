@@ -1089,6 +1089,11 @@ form:valid .form-footer__button:active {
     margin: 0 18px 48px 0;
   }
 }
+@media screen and (max-width: 640px) {
+  .feed__media-block {
+    margin: 0 18px 41px 0;
+  }
+}
 @media screen and (max-width: 639.98px) {
   .feed__media-block {
     gap: 20px 36px;
