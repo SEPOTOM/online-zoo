@@ -7,6 +7,26 @@
 
   @media screen and (max-width: $small-desktop) {
     background-color: $backgroundBlack;
+
+    &::before {
+      position: fixed;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+
+      background-color: $blackTransparent;
+      opacity: 0;
+
+      transition: opacity 0.3s ease 0s;
+
+      content: '';
+    }
+
+    ._menu-open &::before {
+      opacity: 1;
+    }
   }
 
   @media screen and (max-width: $tablet) {

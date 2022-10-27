@@ -7,21 +7,23 @@ function removeNavigationActiveHeader() {
 }
 
 function closeHeaderMenu() {
+  const html = document.documentElement;
   const header = document.querySelector('.header');
   const headerContainer = header.querySelector('.header__container');
   const headerLogo = header.querySelector('.header__main-link');
 
-  header.classList.remove('_menu-open');
+  html.classList.remove('_menu-open');
   headerContainer.prepend(headerLogo);
 }
 
 function openHeaderMenu() {
+  const html = document.documentElement;
   const header = document.querySelector('.header');
   const headerNavigation = header.querySelector('.header__navigation');
   const headerLogo = header.querySelector('.header__main-link');
 
   headerNavigation.prepend(headerLogo);
-  header.classList.add('_menu-open');
+  html.classList.add('_menu-open');
 }
 
 function changeFormRangeActive(pageWidth) {
@@ -81,13 +83,13 @@ function changeFormRangeActive(pageWidth) {
 // Header menu logic
 
 {
+  const html = document.documentElement;
   const header = document.querySelector('.header');
-  const burgerButton = header.querySelector('.header__menu');
 
-  burgerButton.addEventListener('click', () => {
-    if (header.classList.contains('_menu-open')) {
+  header.addEventListener('click', (e) => {
+    if (html.classList.contains('_menu-open') && (e.target.closest('.header__menu') || !e.target.closest('.header__navigation'))) {
       closeHeaderMenu();
-    } else {
+    } else if (e.target.closest('.header__menu')) {
       openHeaderMenu();
     }
   });
