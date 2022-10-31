@@ -1,0 +1,80 @@
+{
+  "cardsContent": [
+    {
+      "imageURL": "/assets/images/pets/giant-pandas.jpg",
+      "imageText": "Two giant pandas",
+      "title": "giant Pandas",
+      "description": "Some info about giant pandas...",
+      "place": "Native to Southwest China",
+      "food": "herbivore",
+      "linkTo": "#no_scroll"
+    },
+    {
+      "imageURL": "/assets/images/pets/eagle.jpg",
+      "imageText": "An eagle in flight",
+      "title": "Eagles",
+      "description": "Some info about eagles...",
+      "place": "Native to South America",
+      "food": "carnivorous",
+      "linkTo": "#no_scroll"
+    },
+    {
+      "imageURL": "/assets/images/pets/gorilla.jpg",
+      "imageText": "Gorilla",
+      "title": "Gorillas",
+      "description": "Some info about gorillas...",
+      "place": "Native to Congo",
+      "food": "herbivore",
+      "linkTo": "#no_scroll"
+    },
+    {
+      "imageURL": "/assets/images/pets/two-tord-sloth.jpg",
+      "imageText": "A two tord sloth hanging on a branch",
+      "title": "Two-toed Sloth",
+      "description": "Some info about two-toed sloths...",
+      "place": "Mesoamerica, South America",
+      "food": "herbivore",
+      "linkTo": "#no_scroll"
+    },
+    {
+      "imageURL": "/assets/images/pets/cheetahs.jpg",
+      "imageText": "Cheetah with a cub",
+      "title": "cheetahs",
+      "description": "Some info about giant cheetahs...",
+      "place": "Native to Africa",
+      "food": "carnivorous",
+      "linkTo": "#no_scroll"
+    },
+    {
+      "imageURL": "/assets/images/pets/penguin.jpg",
+      "imageText": "Penguin",
+      "title": "Penguins",
+      "description": "Some info about penguins...",
+      "place": "Native to Antarctica",
+      "food": "carnivorous",
+      "linkTo": "#no_scroll"
+    },
+    {
+      "imageURL": "/assets/images/pets/alligator.jpg",
+      "imageText": "An alligator peeking out of the water",
+      "title": "Alligators",
+      "description": "Some info about alligators...",
+      "place": "Native to Southeastern U. S.",
+      "food": "carnivorous",
+      "linkTo": "#no_scroll"
+    }
+  ],
+
+  "classes": {
+    "body": "card-pets",
+    "imageLink": "card-pets__picture card-pets__picture_ibg",
+    "image": "card-pets__image",
+    "hiddenBlock": "card-pets__hidden",
+    "title": "card-pets__title",
+    "description": "card-pets__description",
+    "content": "card-pets__content",
+    "place": "card-pets__place",
+    "icon": "card-pets__icon",
+    "iconMargin": "card-pets__icon_margin"
+  }
+}

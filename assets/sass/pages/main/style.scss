@@ -595,6 +595,8 @@
   // .pets__container
 
   &__container {
+    position: relative;
+
     display: grid;
     justify-items: center;
     gap: 79px;
@@ -615,21 +617,30 @@
   // .pets__slider
 
   &__slider {
-    position: relative;
-
     width: 100%;
+
+    overflow: hidden;
   }
 
   // .pets__swiper
 
   &__swiper {
+    position: relative;
+
+    display: flex;
+    gap: 120px;
+
+    transition: transform 0.3s ease 0s;
   }
 
   // .pets__slide
 
   &__slide {
+    flex: 0 0 100%;
+
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     gap: 20px 30px;
     padding: 0 3px 0 1px;
 
@@ -660,29 +671,31 @@
   // .pets__card
 
   &__card {
-    display: grid;
+    max-height: 426px;
     padding: 1px;
 
     background: $orange;
     border-radius: 5px;
 
-    @media screen and (max-width: $big-tablet) {
-      &._hide {
-        display: none;
-      }
+    @media screen and (max-width: $small-desktop) {
+      max-height: 514px;
     }
   }
 
   &__swipe-to-left,
   &__swipe-to-right {
     position: absolute;
-    top: 50%;
+    top: 403px / 1005px * 100%;
 
     @extend %sliderButton;
 
-    transform: translate(0, -50%);
+    @media screen and (max-width: $small-desktop) {
+      top: 334px / 811px * 100%;
+    }
 
     @media screen and (max-width: $tablet) {
+      top: 314px / 811px * 100%;
+
       margin-top: -4px;
     }
 
@@ -748,7 +761,10 @@
 
 .card-pets {
   display: grid;
+  height: 100%;
+
   border-radius: 5px;
+
   overflow: hidden;
 
   // .card-pets__picture
@@ -865,7 +881,7 @@
     grid-auto-flow: column;
     align-items: end;
     margin-top: -1px;
-    padding: 7px 7px 13px 15px;
+    padding: 8px 7px 13px 15px;
 
     color: $black;
 
@@ -873,7 +889,7 @@
 
     @media screen and (max-width: $tablet) {
       grid-template-columns: auto 37px;
-      padding: 7px 6px 9px 12px;
+      padding: 8px 6px 10px 12px;
     }
   }
 
@@ -898,7 +914,7 @@
     max-height: 38px;
 
     &_margin {
-      margin: 3px 4px 0 0;
+      margin: 1px 4px 0 0;
     }
 
     @media screen and (max-width: $tablet) {

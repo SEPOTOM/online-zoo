@@ -440,11 +440,15 @@ form:valid .form-footer__button:active {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     opacity: 0;
+    visibility: hidden;
     transition: opacity 0.3s ease 0s;
     content: "";
   }
   ._menu-open .header::before {
     opacity: 1;
+  }
+  .header._visible::before {
+    visibility: visible;
   }
 }
 @media screen and (max-width: 640px) {

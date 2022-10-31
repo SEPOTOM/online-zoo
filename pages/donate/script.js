@@ -14,6 +14,9 @@ function closeHeaderMenu() {
 
   html.classList.remove('_menu-open');
   headerContainer.prepend(headerLogo);
+  setTimeout(() => {
+    header.classList.remove('_visible');
+  }, 300);
 }
 
 function openHeaderMenu() {
@@ -24,6 +27,7 @@ function openHeaderMenu() {
 
   headerNavigation.prepend(headerLogo);
   html.classList.add('_menu-open');
+  header.classList.add('_visible');
 }
 
 function changeFormRangeActive(pageWidth) {

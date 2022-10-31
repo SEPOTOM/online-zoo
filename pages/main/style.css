@@ -468,11 +468,15 @@ form:valid .form-footer__button:active {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     opacity: 0;
+    visibility: hidden;
     transition: opacity 0.3s ease 0s;
     content: "";
   }
   ._menu-open .header::before {
     opacity: 1;
+  }
+  .header._visible::before {
+    visibility: visible;
   }
 }
 @media screen and (max-width: 640px) {
@@ -1439,6 +1443,7 @@ form:valid .form-footer__button:active {
 }
 
 .pets__container {
+  position: relative;
   display: grid;
   justify-items: center;
   gap: 79px;
@@ -1459,12 +1464,20 @@ form:valid .form-footer__button:active {
   }
 }
 .pets__slider {
-  position: relative;
   width: 100%;
+  overflow: hidden;
+}
+.pets__swiper {
+  position: relative;
+  display: flex;
+  gap: 120px;
+  transition: transform 0.3s ease 0s;
 }
 .pets__slide {
+  flex: 0 0 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   gap: 20px 30px;
   padding: 0 3px 0 1px;
 }
@@ -1497,23 +1510,28 @@ form:valid .form-footer__button:active {
   }
 }
 .pets__card {
-  display: grid;
+  max-height: 426px;
   padding: 1px;
   background: linear-gradient(113.96deg, #f9804b 1.49%, #fe9013 101.44%);
   border-radius: 5px;
 }
-@media screen and (max-width: 999.98px) {
-  .pets__card._hide {
-    display: none;
+@media screen and (max-width: 1000px) {
+  .pets__card {
+    max-height: 514px;
   }
 }
 .pets__swipe-to-left, .pets__swipe-to-right {
   position: absolute;
-  top: 50%;
-  transform: translate(0, -50%);
+  top: 40.0995024876%;
+}
+@media screen and (max-width: 1000px) {
+  .pets__swipe-to-left, .pets__swipe-to-right {
+    top: 41.1837237978%;
+  }
 }
 @media screen and (max-width: 640px) {
   .pets__swipe-to-left, .pets__swipe-to-right {
+    top: 38.7176325524%;
     margin-top: -4px;
   }
 }
@@ -1572,6 +1590,7 @@ form:valid .form-footer__button:active {
 
 .card-pets {
   display: grid;
+  height: 100%;
   border-radius: 5px;
   overflow: hidden;
 }
@@ -1661,14 +1680,14 @@ form:valid .form-footer__button:active {
   grid-auto-flow: column;
   align-items: end;
   margin-top: -1px;
-  padding: 7px 7px 13px 15px;
+  padding: 8px 7px 13px 15px;
   color: #000000;
   background-color: #ffffff;
 }
 @media screen and (max-width: 640px) {
   .card-pets__content {
     grid-template-columns: auto 37px;
-    padding: 7px 6px 9px 12px;
+    padding: 8px 6px 10px 12px;
   }
 }
 .card-pets__place {
@@ -1689,7 +1708,7 @@ form:valid .form-footer__button:active {
   max-height: 38px;
 }
 .card-pets__icon_margin {
-  margin: 3px 4px 0 0;
+  margin: 1px 4px 0 0;
 }
 @media screen and (max-width: 640px) {
   .card-pets__icon {
