@@ -1315,6 +1315,7 @@
 
   &__container {
     display: grid;
+    min-width: 0;
   }
 
   // .testimonials__title
@@ -1345,7 +1346,11 @@
   &__slider {
     display: grid;
     gap: 21px;
+    width: 100%;
+    min-width: 0;
     margin-bottom: 31px;
+
+    overflow: hidden;
 
     @media screen and (max-width: $small-desktop) {
       margin-bottom: 51px;
@@ -1363,21 +1368,45 @@
   // .testimonials__swiper
 
   &__swiper {
-    display: flex;
-    gap: 15px 30px;
+    width: 100%;
+    min-width: 0;
+
+    font-size: 0;
+    white-space: nowrap;
+
+    transition: transform 0.3s ease 0s;
 
     @media screen and (max-width: $big-tablet) {
+      display: flex;
       flex-direction: column;
+      row-gap: 15px;
     }
   }
 
   // .testimonials__slide
 
   &__slide {
+    display: inline-block;
+    width: 268px;
+    height: 100%;
+
+    white-space: normal;
+
+    &:not(:last-child) {
+      margin-right: 29px;
+    }
+
     @media screen and (max-width: $desktop) {
-      &._hide {
-        display: none;
+      width: 293px;
+
+      &:not(:last-child) {
+        margin-right: 30px;
       }
+    }
+
+    @media screen and (max-width: $big-tablet) {
+      width: 100%;
+      margin-right: 0;
     }
   }
 
@@ -1386,10 +1415,6 @@
   &__row {
     @media screen and (max-width: $small-desktop) {
       padding-right: 12px;
-    }
-
-    @media screen and (max-width: $big-tablet) {
-      display: none;
     }
   }
 
@@ -1431,17 +1456,11 @@
     bottom: 1px;
     left: 0;
 
-    width: 115px;
-
     background-color: $orangeColor;
     border-radius: 5px;
     cursor: pointer;
 
     transition: background-color 0.3s ease 0s;
-
-    @media screen and (max-width: $small-desktop) {
-      width: 75px;
-    }
 
     &:hover {
       background-color: $orangeHover;
@@ -1542,6 +1561,7 @@
   // .slide-testimonials__name
 
   &__name {
+    font-size: 16px;
     line-height: 120%;
     color: $black;
 

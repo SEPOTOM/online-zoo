@@ -262,6 +262,199 @@ function shuffle(arr) {
 	return newArr;
 }
 
+function initTestimonialsSlider(elem, pageWidth, slides) {
+  function moveThumb(e) {
+    moveThumbOn(e);
+
+    document.addEventListener('mousemove', moveThumbOn);
+    document.addEventListener('mouseup', stopMoveThumb);
+    document.addEventListener('touchmove', moveThumbOn);
+    document.addEventListener('touchend', stopMoveThumb);
+  }
+
+  function moveThumbOn(e) {
+    const clientX = e.clientX || e.changedTouches[0].clientX;
+    const rangeX = clientX - range.getBoundingClientRect().left;
+    let rangeXPrc = (rangeX * 100) / range.scrollWidth;
+
+    moveThumbTo(findNearestStepPrc(rangeXPrc, stepsPrc));
+  }
+
+  function moveThumbTo(left) {
+    const rangeThumb = range.firstElementChild;
+    rangeThumb.style.left = left + '%';
+
+    swipeTo(left);
+  }
+
+  function stopMoveThumb() {
+    document.removeEventListener('mousemove', moveThumbOn);
+    document.removeEventListener('mouseup', stopMoveThumb);
+    document.removeEventListener('touchmove', moveThumbOn);
+    document.removeEventListener('touchend', stopMoveThumb);
+  }
+
+  function swipeTo(left) {
+    const rest = (left) ? swiperRest : 0;
+
+    const multiplier = Math.round(left / step.valuePrc);
+    const translateX = ((slideData.width + slideData.marginRight) * multiplier) + rest;
+    swiper.style.transform = `translate3d(-${translateX}px, 0, 0)`;
+  }
+
+  function getStep() {
+    const slides = swiper.children;
+
+    const swiperWidth = swiper.offsetWidth;
+    const stepWidth = slideData.width + slideData.marginRight;
+    const slidesLength = slides.length;
+
+    let value = slidesLength - Math.floor(swiperWidth / stepWidth);
+    let fullSlidesWidth = 0;
+
+    for (let i = 0; i <= value; i++) {
+      fullSlidesWidth += stepWidth;
+    }
+
+    fullSlidesWidth -= slideData.marginRight;
+
+    if (swiperWidth < fullSlidesWidth) {
+      value--;
+    }
+
+    return {
+      value: value,
+      valuePrc: 100 / (value + 1),
+    };
+  }
+
+  function getStepsPrc(step) {
+    const steps = [];
+    const lastStep = 100 - step.valuePrc;
+
+    for (let i = 0; i < lastStep; i += step.valuePrc) {
+      steps.push(i);
+    }
+
+    steps.push(lastStep);
+
+    return steps;
+  }
+
+  function getSlideData() {
+    const slide = swiper.firstElementChild;
+    const slideStyles = getComputedStyle(slide);
+
+    return {
+      width: slide.offsetWidth,
+      marginRight: parseInt(slideStyles.marginRight),
+    };
+  }
+
+  function getSwiperRest() {
+    const swiperWidth = swiper.offsetWidth;
+    let maxSlidesWidth = 0;
+
+    while (swiperWidth > maxSlidesWidth) {
+      maxSlidesWidth += slideData.width + slideData.marginRight;
+    }
+
+    let rest = maxSlidesWidth - swiperWidth - slideData.marginRight;
+
+    if (rest < 0) {
+      rest = 0;
+    }
+
+    return rest;
+  }
+
+  function replaceRangeWithClone() {
+    const range = elem.querySelector('[data-range]');
+    const row = range.parentElement;
+
+    row.innerHTML = '';
+    row.append(range.cloneNode(true));
+  }
+
+  function findNearestStepPrc(prc, steps) {
+    if (prc < 0) {
+      return steps[0];
+    } else if (prc > 100) {
+      return steps[steps.length - 1];
+    }
+
+    let smallerStepPrc;
+
+    for(let i = 1; steps[i] < prc; i++) {
+      smallerStepPrc = steps[i];
+    }
+
+    if (!smallerStepPrc) {
+      return steps[0];
+    }
+
+    return smallerStepPrc;
+  }
+
+  function setTogglerWidth() {
+    toggler.style.width = `${step.valuePrc}%`;
+  }
+
+  function needRange() {
+    const slidesQuantity = swiper.children.length;
+    return swiper.offsetWidth < ((slideData.width + slideData.marginRight) * slidesQuantity) - slideData.marginRight;
+  }
+
+  function hideRange() {
+    swiper.style.transform = '';
+    toggler.style.left = '';
+    row.style.display = 'none';
+  }
+
+  function showRange() {
+    row.style.display = '';
+  }
+
+  replaceRangeWithClone();
+
+  const swiper = elem.querySelector('[data-swiper]');
+  const range = elem.querySelector('[data-range]');
+  const toggler = range.firstElementChild;
+  const row = range.parentElement;
+
+  if (pageWidth < 1000) {
+    const firstThreeSLides = slides.slice(0, 3);
+
+    swiper.innerHTML = '';
+    swiper.append(...firstThreeSLides);
+
+    hideRange();
+
+    return;
+  } else {
+    swiper.append(...slides);
+  }
+
+
+  const slideData = getSlideData();
+  const swiperRest = getSwiperRest();
+
+  if (!needRange()) {
+    hideRange();
+    return;
+  } else {
+    showRange();
+  }
+
+  const step = getStep();
+  const stepsPrc = getStepsPrc(step);
+
+  setTogglerWidth();
+
+  range.addEventListener('mousedown', moveThumb);
+  range.addEventListener('touchstart', moveThumb);
+}
+
 const cardPetsFunctions = {
   createCard(cardContent, cardsData) {
     const classes = cardsData.classes;
@@ -424,8 +617,13 @@ let currentCardsQuantity;
     maxCards = 6;
   }
 
+  const testimonialsSlider = document.querySelector('.testimonials__slider');
+  const swiper = testimonialsSlider.querySelector('[data-swiper]');
+  const slides = [...swiper.children];
+
   changeCardFeedArrows(pageWidth);
   initPetsSlider(maxCards, activeSlideNum);
+  initTestimonialsSlider(testimonialsSlider, pageWidth, slides);
 
   window.addEventListener('resize', () => {
     pageWidth = Math.max(document.body.offsetWidth, document.documentElement.offsetWidth, document.body.clientWidth, document.documentElement.clientWidth);
@@ -446,6 +644,7 @@ let currentCardsQuantity;
 
     changeCardFeedArrows(pageWidth);
     initPetsSlider(maxCards, activeSlideNum);
+    initTestimonialsSlider(testimonialsSlider, pageWidth, slides);
   });
 }
 }

@@ -2059,6 +2059,7 @@ form:valid .form-footer__button:active {
 
 .testimonials__container {
   display: grid;
+  min-width: 0;
 }
 .testimonials__title {
   margin-bottom: 47px;
@@ -2092,7 +2093,10 @@ form:valid .form-footer__button:active {
 .testimonials__slider {
   display: grid;
   gap: 21px;
+  width: 100%;
+  min-width: 0;
   margin-bottom: 31px;
+  overflow: hidden;
 }
 @media screen and (max-width: 1000px) {
   .testimonials__slider {
@@ -2110,27 +2114,45 @@ form:valid .form-footer__button:active {
   }
 }
 .testimonials__swiper {
-  display: flex;
-  gap: 15px 30px;
+  width: 100%;
+  min-width: 0;
+  font-size: 0;
+  white-space: nowrap;
+  transition: transform 0.3s ease 0s;
 }
 @media screen and (max-width: 999.98px) {
   .testimonials__swiper {
+    display: flex;
     flex-direction: column;
+    row-gap: 15px;
   }
 }
+.testimonials__slide {
+  display: inline-block;
+  width: 268px;
+  height: 100%;
+  white-space: normal;
+}
+.testimonials__slide:not(:last-child) {
+  margin-right: 29px;
+}
 @media screen and (max-width: 1599.98px) {
-  .testimonials__slide._hide {
-    display: none;
+  .testimonials__slide {
+    width: 293px;
+  }
+  .testimonials__slide:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+@media screen and (max-width: 999.98px) {
+  .testimonials__slide {
+    width: 100%;
+    margin-right: 0;
   }
 }
 @media screen and (max-width: 1000px) {
   .testimonials__row {
     padding-right: 12px;
-  }
-}
-@media screen and (max-width: 999.98px) {
-  .testimonials__row {
-    display: none;
   }
 }
 .testimonials__slipper {
@@ -2161,16 +2183,10 @@ form:valid .form-footer__button:active {
   top: 1px;
   bottom: 1px;
   left: 0;
-  width: 115px;
   background-color: #fe9013;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease 0s;
-}
-@media screen and (max-width: 1000px) {
-  .testimonials__toggler {
-    width: 75px;
-  }
 }
 .testimonials__toggler:hover {
   background-color: #e47209;
@@ -2252,6 +2268,7 @@ form:valid .form-footer__button:active {
   height: 100%;
 }
 .slide-testimonials__name {
+  font-size: 16px;
   line-height: 120%;
   color: #000000;
 }
