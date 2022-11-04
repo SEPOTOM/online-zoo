@@ -1514,6 +1514,10 @@ form:valid .form-footer__button:active {
     gap: 19px;
   }
 }
+.pets__content {
+  position: relative;
+  width: 100%;
+}
 .pets__slider {
   width: 100%;
   overflow: hidden;
@@ -1573,16 +1577,11 @@ form:valid .form-footer__button:active {
 }
 .pets__swipe-to-left, .pets__swipe-to-right {
   position: absolute;
-  top: 40.0995024876%;
-}
-@media screen and (max-width: 1000px) {
-  .pets__swipe-to-left, .pets__swipe-to-right {
-    top: 41.1837237978%;
-  }
+  top: 50%;
+  transform: translate(0, -50%);
 }
 @media screen and (max-width: 640px) {
   .pets__swipe-to-left, .pets__swipe-to-right {
-    top: 38.7176325524%;
     margin-top: -4px;
   }
 }

@@ -614,6 +614,14 @@
     }
   }
 
+  // .pets__content
+
+  &__content {
+    position: relative;
+
+    width: 100%;
+  }
+
   // .pets__slider
 
   &__slider {
@@ -685,16 +693,19 @@
   &__swipe-to-left,
   &__swipe-to-right {
     position: absolute;
-    top: 403px / 1005px * 100%;
+    // top: 403px / 1005px * 100%;
+    top: 50%;
+
+    transform: translate(0, -50%);
 
     @extend %sliderButton;
 
     @media screen and (max-width: $small-desktop) {
-      top: 334px / 811px * 100%;
+      // top: 334px / 811px * 100%;
     }
 
     @media screen and (max-width: $tablet) {
-      top: 314px / 811px * 100%;
+      // top: 314px / 811px * 100%;
 
       margin-top: -4px;
     }

@@ -214,13 +214,26 @@ async function initPetsSlider(maxCards, activeSlideNum) {
     swiper.style.transform = `translate(-${(slideWidth + slidesGap) * ((activeSlideNum > 0) ? activeSlideNum - 1 : activeSlideNum)}, 0)`;
   }
 
+  function replaceButtonsWithClones() {
+    const rightButton = document.querySelector('.pets__swipe-to-right');
+    const leftButton = document.querySelector('.pets__swipe-to-left');
+    const contentBlock = rightButton.parentElement;
+
+    rightButton.remove();
+    leftButton.remove();
+
+    contentBlock.append(leftButton.cloneNode(true), rightButton.cloneNode(true));
+  }
+
+  replaceButtonsWithClones();
+
   const rightButton = document.querySelector('.pets__swipe-to-right');
   const leftButton = document.querySelector('.pets__swipe-to-left');
   const cardsData = await getCardsData();
 
   rightButton.removeEventListener('click', swipeRight);
   leftButton.removeEventListener('click', swipeLeft);
-  
+
   addSlides(maxCards, cardsData);
 
   const slides = document.querySelectorAll('.pets__slide');
@@ -228,7 +241,7 @@ async function initPetsSlider(maxCards, activeSlideNum) {
   if (slides.length - 1 < activeSlideNum) {
     activeSlideNum = slides.length - 1;
   }
-  
+
   let slideWidth = getSlideWidth();
   let slidesGap = getSlidesGap();
   let translate = 0;
@@ -237,7 +250,7 @@ async function initPetsSlider(maxCards, activeSlideNum) {
   if (activeSlide) {
     activeSlide.classList.remove('_active');
   }
-  
+
   setActiveSlide(activeSlideNum);
   activeSlide = getActiveSlide();
   changeSwiperTransform();
