@@ -169,7 +169,7 @@ h6 {
   content: "\e907";
 }
 
-html._menu-open {
+html._menu-open, html._popup-open {
   overflow: hidden;
 }
 
@@ -348,6 +348,57 @@ form:valid .form-footer__button:active {
   color: #4b9200;
   border-color: #4b9200;
   transition: all 0s ease 0s;
+}
+
+.close-button {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-right: -2px;
+  margin-left: auto;
+  padding: 2px 2px 5px 2px;
+}
+.close-button__line {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  flex: 0 0 2px;
+  width: 18px;
+  height: 2px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: all 0.3s ease 0s;
+  background-color: #fe9013;
+}
+.close-button__line:first-child {
+  top: 4px;
+  bottom: -4px;
+  transform: rotate(-40deg);
+}
+.close-button__line:nth-child(2) {
+  transform: scale(0);
+}
+.close-button__line:last-child {
+  top: -4px;
+  bottom: 4px;
+  transform: rotate(40deg);
+}
+
+.popup-button {
+  position: fixed;
+  top: -8px;
+  right: -26px;
+  z-index: 99;
+  width: 14px;
+  height: 14px;
+  background: url("/assets/icons/x-icon.svg") center/cover no-repeat;
+  transition: all 0.3s ease 0s;
+}
+@media screen and (max-width: 400px) {
+  .popup-button {
+    right: -16px;
+  }
 }
 
 .footer__main-link, .header__main-link {

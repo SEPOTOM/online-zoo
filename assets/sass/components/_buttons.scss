@@ -216,3 +216,69 @@
     }
   }
 }
+
+.close-button {
+  position: fixed;
+
+
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-right: -2px;
+  margin-left: auto;
+  padding: 2px 2px 5px 2px;
+
+  &__line {
+
+    position: relative;
+    top: 0;
+    bottom: 0;
+
+    flex: 0 0 2px;
+    width: 18px;
+    height: 2px;
+
+    background-color: $white;
+    border-radius: 2px;
+
+    transition: all 0.3s ease 0s;
+
+      background-color: $orangeColor;
+
+    &:first-child {
+      top: 4px;
+      bottom: -4px;
+
+      transform: rotate(-40deg);
+    }
+
+    &:nth-child(2) {
+      transform: scale(0);
+    }
+
+    &:last-child {
+      top: -4px;
+      bottom: 4px;
+
+      transform: rotate(40deg);
+    }
+  }
+}
+
+.popup-button {
+  position: fixed;
+  top: -8px;
+  right: -26px;
+  z-index: 99;
+
+  width: 14px;
+  height: 14px;
+
+  background: url('/assets/icons/x-icon.svg') center / cover no-repeat;
+
+  transition: all 0.3s ease 0s;
+
+  @media screen and (max-width: $medium-mobile) {
+    right: -16px;
+  }
+}

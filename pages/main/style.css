@@ -169,7 +169,7 @@ h6 {
   content: "\e907";
 }
 
-html._menu-open {
+html._menu-open, html._popup-open {
   overflow: hidden;
 }
 
@@ -376,6 +376,57 @@ form:valid .form-footer__button:active {
 }
 .pets__swipe-to-left:active::after, .pets__swipe-to-right:active::after {
   opacity: 0;
+}
+
+.close-button {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-right: -2px;
+  margin-left: auto;
+  padding: 2px 2px 5px 2px;
+}
+.close-button__line {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  flex: 0 0 2px;
+  width: 18px;
+  height: 2px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: all 0.3s ease 0s;
+  background-color: #fe9013;
+}
+.close-button__line:first-child {
+  top: 4px;
+  bottom: -4px;
+  transform: rotate(-40deg);
+}
+.close-button__line:nth-child(2) {
+  transform: scale(0);
+}
+.close-button__line:last-child {
+  top: -4px;
+  bottom: 4px;
+  transform: rotate(40deg);
+}
+
+.popup-button {
+  position: fixed;
+  top: -8px;
+  right: -26px;
+  z-index: 99;
+  width: 14px;
+  height: 14px;
+  background: url("/assets/icons/x-icon.svg") center/cover no-repeat;
+  transition: all 0.3s ease 0s;
+}
+@media screen and (max-width: 400px) {
+  .popup-button {
+    right: -16px;
+  }
 }
 
 .footer__main-link, .header__main-link {
@@ -2103,6 +2154,11 @@ form:valid .form-footer__button:active {
     margin-bottom: 51px;
   }
 }
+@media screen and (max-width: 999.98px) {
+  .testimonials__slider {
+    overflow: visible;
+  }
+}
 @media screen and (max-width: 640px) {
   .testimonials__slider {
     margin-bottom: 40px;
@@ -2147,6 +2203,9 @@ form:valid .form-footer__button:active {
 @media screen and (max-width: 999.98px) {
   .testimonials__slide {
     width: 100%;
+    transition: all 0.3s ease 0s;
+  }
+  .testimonials__slide:not(:last-child) {
     margin-right: 0;
   }
 }
@@ -2200,6 +2259,22 @@ form:valid .form-footer__button:active {
     min-width: 240px;
   }
 }
+.testimonials__background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 0.3s ease 0s;
+}
+._popup-open .testimonials__background {
+  z-index: 98;
+}
+.testimonials__background._active {
+  opacity: 1;
+}
 
 .slide-testimonials {
   position: relative;
@@ -2224,6 +2299,24 @@ form:valid .form-footer__button:active {
   .slide-testimonials {
     max-height: 109px;
     padding: 15px 29px 8px 12px;
+    cursor: pointer;
+  }
+  .slide-testimonials.popup {
+    position: fixed;
+    z-index: 99;
+    padding: 15px 13px 8px 15px;
+    cursor: default;
+    transition: all 0.2s ease 0s;
+  }
+  .slide-testimonials.popup_centered {
+    transform: translate(-50%, -50%);
+  }
+  .slide-testimonials.popup_full-height {
+    max-height: none;
+    transform: translate(-50%, 0);
+  }
+  .slide-testimonials.popup_opened {
+    overflow: visible;
   }
 }
 @media screen and (max-width: 320px) {
@@ -2303,6 +2396,18 @@ form:valid .form-footer__button:active {
 @media screen and (max-width: 999.98px) {
   .slide-testimonials__content {
     max-height: 38px;
+  }
+  .popup_centered .slide-testimonials__content, .popup_full-height .slide-testimonials__content {
+    height: auto;
+    max-height: none;
+  }
+  .popup_centered .slide-testimonials__content {
+    padding-bottom: 18px;
+  }
+  .popup_full-height .slide-testimonials__content {
+    height: 83%;
+    padding-right: 10px;
+    overflow: auto;
   }
 }
 .slide-testimonials__text {

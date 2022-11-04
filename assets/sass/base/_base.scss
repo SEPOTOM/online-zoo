@@ -1,5 +1,6 @@
 html {
-  &._menu-open {
+  &._menu-open,
+  &._popup-open {
     overflow: hidden;
   }
 }

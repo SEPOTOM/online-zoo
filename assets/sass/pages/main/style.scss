@@ -1356,6 +1356,10 @@
       margin-bottom: 51px;
     }
 
+    @media screen and (max-width: $big-tablet) {
+      overflow: visible;
+    }
+
     @media screen and (max-width: $tablet) {
       margin-bottom: 40px;
     }
@@ -1406,7 +1410,12 @@
 
     @media screen and (max-width: $big-tablet) {
       width: 100%;
-      margin-right: 0;
+      
+      transition: all 0.3s ease 0s;
+      
+      &:not(:last-child) {
+        margin-right: 0;
+      }
     }
   }
 
@@ -1479,6 +1488,29 @@
       min-width: 240px;
     }
   }
+
+  // .testimonials__background
+
+  &__background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background-color: $blackTransparent;
+    opacity: 0;
+
+    transition: opacity 0.3s ease 0s;
+
+    ._popup-open & {
+      z-index: 98;
+    }
+
+    &._active {
+      opacity: 1;
+    }
+  }
 }
 
 .slide-testimonials {
@@ -1503,6 +1535,33 @@
   @media screen and (max-width: $big-tablet) {
     max-height: 109px;
     padding: 15px 29px 8px 12px;
+
+    cursor: pointer;
+
+    &.popup {
+      position: fixed;
+      z-index: 99;
+
+      padding: 15px 13px 8px 15px;
+
+      cursor: default;
+
+      transition: all 0.2s ease 0s;
+
+      &_centered {
+        transform: translate(-50%, -50%);
+      }
+
+      &_full-height {
+        max-height: none;
+
+        transform: translate(-50%, 0);
+      }
+
+      &_opened {
+        overflow: visible;
+      }
+    }
   }
 
   @media screen and (max-width: $mobile) {
@@ -1613,6 +1672,23 @@
 
     @media screen and (max-width: $big-tablet) {
       max-height: 38px;
+
+      .popup_centered &,
+      .popup_full-height & {
+        height: auto;
+        max-height: none;
+      }
+
+      .popup_centered & {
+        padding-bottom: 18px;
+      }
+
+      .popup_full-height & {
+        height: 83%;
+        padding-right: 10px;
+
+        overflow: auto;
+      }
     }
   }
 

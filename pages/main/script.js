@@ -455,6 +455,170 @@ function initTestimonialsSlider(elem, pageWidth, slides) {
   range.addEventListener('touchstart', moveThumb);
 }
 
+function initTestimonialsPopup(pageWidth) {
+  function showPopup(e) {
+    const target = e.target;
+    let slide = target.closest('.testimonials__slide');
+
+    if (slide && slide.classList.contains('popup')) {
+      slide = slide.parentElement.closest('.testimonials__slide');
+    }
+
+    if (slide) {
+      currentSlide = slide;
+
+      document.documentElement.classList.add('_popup-open');
+
+      addPopup();
+      addBackground();
+      addCloseButton();
+      setTimeout(() => {
+        centerPopup();
+
+        setTimeout(() => {
+          showPopupContent();
+
+          if (isPopupFullHeight()) {
+            makePopupFullHeight();
+          }
+        }, 200)
+      }, 0);
+
+      document.addEventListener('click', closePopup);
+    }
+  }
+
+  function closePopup(e) {
+    const target = e.target;
+
+    if (target.closest('.popup-button') || target.closest('.testimonials__background')) {
+      hidePopupContent();
+
+      setTimeout(() => {
+        popup.classList.remove('popup_centered');
+        popup.classList.remove('popup_full-height');
+        popup.style.width = `${currentSlide.offsetWidth}px`;
+        setPopupPosition();
+
+        closeButton.classList.remove('_active');
+        background.classList.remove('_active');
+      }, 200);
+
+      setTimeout(() => {
+        popup.remove();
+        background.remove();
+
+        currentSlide = null;
+        popup = null;
+        background = null;
+        closeButton = null;
+
+        document.documentElement.classList.remove('_popup-open');
+      }, 400);
+
+      document.removeEventListener('click', closePopup);
+    }
+  }
+
+  function createBackground() {
+    background = document.createElement('div');
+    background.classList.add('testimonials__background');
+    return background;
+  }
+
+  function addBackground() {
+    if (background) {
+      background.classList.add('_active');
+      return;
+    }
+
+    createBackground();
+    testimonialsSwiper.append(background);
+    setTimeout(() => {
+      background.classList.add('_active');
+    }, 0);
+  }
+
+  function addCloseButton() {
+    createCloseButton();
+    popup.append(closeButton);
+  }
+
+  function createCloseButton() {
+    closeButton = document.createElement('button');
+    closeButton.classList.add('popup-button');
+    closeButton.type = 'button';
+    return closeButton;
+  }
+
+  function addPopup() {
+    popup = currentSlide.cloneNode(true);
+    popup.classList.add('popup');
+    popup.style.width = `${currentSlide.offsetWidth}px`;
+
+    setPopupPosition();
+
+    testimonialsSwiper.append(popup);
+  }
+
+  function setPopupPosition() {
+    const position = currentSlide.getBoundingClientRect();
+    popup.style.top = `${position.top}px`;
+    popup.style.left = `${position.left}px`;
+    popup.style.right = `${position.left}px`;
+  }
+
+  function centerPopup() {
+    popup.style.cssText = '';
+    popup.style.top = '50%';
+    popup.style.left = '50%';
+    popup.style.width = '267px';
+    popup.classList.add('popup_centered');
+  }
+
+  function showPopupContent() {
+    popup.style.maxHeight = `${popup.scrollHeight}px`;
+    setTimeout(() => {
+      popup.classList.add('popup_opened');
+    }, 200);
+  }
+
+  function isPopupFullHeight() {
+    const windowHeight = window.innerHeight;
+    return windowHeight < popup.scrollHeight;
+  }
+
+  function makePopupFullHeight() {
+    popup.classList.remove('popup_centered');
+    popup.classList.add('popup_full-height');
+    popup.style.top = '20px';
+    popup.style.bottom = '20px';
+    popup.style.left = '50%';
+    popup.style.width = '277px';
+    popup.style.maxHeight = `${window.innerHeight - 40}px`;
+  }
+
+  function hidePopupContent() {
+    popup.classList.remove('popup_opened');
+    popup.classList.remove('popup_full-height');
+    centerPopup();
+    popup.style.maxHeight = '';
+    popup.style.bottom = '';
+  }
+
+  const testimonialsSwiper = document.querySelector('.testimonials__swiper');
+  let currentSlide = null;
+  let popup = null;
+  let background = null;
+  let closeButton = null;
+
+  if (pageWidth < 1000) {
+    testimonialsSwiper.onclick = showPopup;
+  } else {
+    testimonialsSwiper.onclick = '';
+  }
+}
+
 const cardPetsFunctions = {
   createCard(cardContent, cardsData) {
     const classes = cardsData.classes;
@@ -624,6 +788,7 @@ let currentCardsQuantity;
   changeCardFeedArrows(pageWidth);
   initPetsSlider(maxCards, activeSlideNum);
   initTestimonialsSlider(testimonialsSlider, pageWidth, slides);
+  initTestimonialsPopup(pageWidth);
 
   window.addEventListener('resize', () => {
     pageWidth = Math.max(document.body.offsetWidth, document.documentElement.offsetWidth, document.body.clientWidth, document.documentElement.clientWidth);
@@ -645,6 +810,7 @@ let currentCardsQuantity;
     changeCardFeedArrows(pageWidth);
     initPetsSlider(maxCards, activeSlideNum);
     initTestimonialsSlider(testimonialsSlider, pageWidth, slides);
+    initTestimonialsPopup(pageWidth);
   });
 }
 }
