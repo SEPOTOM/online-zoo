@@ -1,7 +1,7 @@
 {
   "cardsContent": [
     {
-      "imageURL": "/assets/images/pets/giant-pandas.jpg",
+      "imageURL": "../../assets/images/pets/giant-pandas.jpg",
       "imageText": "Two giant pandas",
       "title": "giant Pandas",
       "description": "Some info about giant pandas...",
@@ -10,7 +10,7 @@
       "linkTo": "#no_scroll"
     },
     {
-      "imageURL": "/assets/images/pets/eagle.jpg",
+      "imageURL": "../../assets/images/pets/eagle.jpg",
       "imageText": "An eagle in flight",
       "title": "Eagles",
       "description": "Some info about eagles...",
@@ -19,7 +19,7 @@
       "linkTo": "#no_scroll"
     },
     {
-      "imageURL": "/assets/images/pets/gorilla.jpg",
+      "imageURL": "../../assets/images/pets/gorilla.jpg",
       "imageText": "Gorilla",
       "title": "Gorillas",
       "description": "Some info about gorillas...",
@@ -28,7 +28,7 @@
       "linkTo": "#no_scroll"
     },
     {
-      "imageURL": "/assets/images/pets/two-tord-sloth.jpg",
+      "imageURL": "../../assets/images/pets/two-tord-sloth.jpg",
       "imageText": "A two tord sloth hanging on a branch",
       "title": "Two-toed Sloth",
       "description": "Some info about two-toed sloths...",
@@ -37,7 +37,7 @@
       "linkTo": "#no_scroll"
     },
     {
-      "imageURL": "/assets/images/pets/cheetahs.jpg",
+      "imageURL": "../../assets/images/pets/cheetahs.jpg",
       "imageText": "Cheetah with a cub",
       "title": "cheetahs",
       "description": "Some info about giant cheetahs...",
@@ -46,7 +46,7 @@
       "linkTo": "#no_scroll"
     },
     {
-      "imageURL": "/assets/images/pets/penguin.jpg",
+      "imageURL": "../../assets/images/pets/penguin.jpg",
       "imageText": "Penguin",
       "title": "Penguins",
       "description": "Some info about penguins...",
@@ -55,7 +55,7 @@
       "linkTo": "#no_scroll"
     },
     {
-      "imageURL": "/assets/images/pets/alligator.jpg",
+      "imageURL": "../../assets/images/pets/alligator.jpg",
       "imageText": "An alligator peeking out of the water",
       "title": "Alligators",
       "description": "Some info about alligators...",

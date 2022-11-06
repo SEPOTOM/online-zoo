@@ -723,10 +723,10 @@ const cardPetsFunctions = {
 
     if (cardContent.food === 'herbivore') {
       icon.classList.add(classes.iconMargin);
-      icon.src = '/assets/icons/banana-bamboo.svg';
+      icon.src = '../../assets/icons/banana-bamboo.svg';
       icon.alt = 'Banana and bamboo icon (this animal is herbivore)';
     } else {
-      icon.src = '/assets/icons/meat-fish.svg';
+      icon.src = '../../assets/icons/meat-fish.svg';
       icon.alt = 'Meat and fish icon (this animal is carnivorous)';
     }
 
