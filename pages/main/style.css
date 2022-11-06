@@ -1518,8 +1518,14 @@ form:valid .form-footer__button:active {
   position: relative;
   width: 100%;
 }
+@media screen and (max-width: 1599.98px) {
+  .pets__content {
+    overflow: hidden;
+  }
+}
 .pets__slider {
   width: 100%;
+  max-width: 100%;
   overflow: hidden;
 }
 .pets__swiper {
