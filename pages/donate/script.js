@@ -97,6 +97,9 @@ function initFormFeed(pageWidth, hiddenRangeElements) {
 
       if (activeItemIndex !== -1) {
         currentItem = range.children[activeItemIndex];
+      } else {
+        removeActiveItem();
+        return;
       }
     }
 
@@ -111,7 +114,9 @@ function initFormFeed(pageWidth, hiddenRangeElements) {
         currentItem.classList.remove('_transform');
         currentItem.dataset.active = '';
 
-        activeItem.removeAttribute('data-active');
+        if (activeItem) {
+          activeItem.removeAttribute('data-active');
+        }
 
         activeItem = currentItem;
         if (type === 'click') {
@@ -147,6 +152,11 @@ function initFormFeed(pageWidth, hiddenRangeElements) {
   function getRangeValues() {
     const rangeItems = [...range.children];
     return rangeItems.map((item) => item.textContent.trim());
+  }
+
+  function removeActiveItem() {
+    activeItem.removeAttribute('data-active');
+    activeItem = null;
   }
 
   const form = document.querySelector('.form-feed');
