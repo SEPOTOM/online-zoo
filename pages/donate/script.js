@@ -56,7 +56,7 @@ function initFormFeed(pageWidth, hiddenRangeElements) {
     }
 
     if (counter) {
-      for(let hiddenItem in hiddenRangeElements) {
+      for (let hiddenItem in hiddenRangeElements) {
         if (counter === 0) {
           break;
         }
@@ -93,7 +93,7 @@ function initFormFeed(pageWidth, hiddenRangeElements) {
         rangeValues = getRangeValues();
       }
 
-      const activeItemIndex = rangeValues.indexOf(amountField.value)
+      const activeItemIndex = rangeValues.indexOf(amountField.value);
 
       if (activeItemIndex !== -1) {
         currentItem = range.children[activeItemIndex];

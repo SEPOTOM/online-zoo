@@ -698,20 +698,13 @@
   &__swipe-to-left,
   &__swipe-to-right {
     position: absolute;
-    // top: 403px / 1005px * 100%;
     top: 50%;
 
     transform: translate(0, -50%);
 
     @extend %sliderButton;
 
-    @media screen and (max-width: $small-desktop) {
-      // top: 334px / 811px * 100%;
-    }
-
     @media screen and (max-width: $tablet) {
-      // top: 314px / 811px * 100%;
-
       margin-top: -4px;
     }
 
@@ -1426,9 +1419,9 @@
 
     @media screen and (max-width: $big-tablet) {
       width: 100%;
-      
+
       transition: all 0.3s ease 0s;
-      
+
       &:not(:last-child) {
         margin-right: 0;
       }
