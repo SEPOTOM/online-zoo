@@ -1418,21 +1418,6 @@ form:valid .form-footer__button:active {
   display: grid;
   padding-top: 15px;
 }
-@media screen and (max-width: 1599.98px) {
-  .form-feed__item._hide1 {
-    display: none;
-  }
-}
-@media screen and (max-width: 999.98px) {
-  .form-feed__item._hide2 {
-    display: none;
-  }
-}
-@media screen and (max-width: 840px) {
-  .form-feed__item._hide3 {
-    display: none;
-  }
-}
 @media screen and (max-width: 400px) {
   .form-feed__item {
     padding-top: 11.5px;
@@ -1466,12 +1451,12 @@ form:valid .form-footer__button:active {
   .form-feed__dot {
     width: 5px;
     height: 5px;
-    margin: 0 43px 13px 17px;
+    margin: 0 44px 13px 17px;
   }
 }
 @media screen and (max-width: 320px) {
   .form-feed__dot {
-    margin: 0 43px 10px 17px;
+    margin: 0 44px 10px 17px;
   }
 }
 .form-feed__dot::before, .form-feed__dot::after {
@@ -1480,21 +1465,30 @@ form:valid .form-footer__button:active {
   left: 50%;
   border: 2px solid transparent;
   border-radius: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
   content: "";
+}
+._transform .form-feed__dot::before, ._transform .form-feed__dot::after {
+  transform: translate(-50%, -50%) scale(0);
+}
+[data-active] .form-feed__dot::before, [data-active] .form-feed__dot::after {
+  border-color: #fe9013;
+  transform: translate(-50%, -50%) scale(1);
 }
 @media screen and (max-width: 400px) {
   .form-feed__dot::before, .form-feed__dot::after {
     border-width: 1px;
-    transform: translate(-53%, -53%);
+    transform: translate(-53%, -53%) scale(1);
   }
-}
-._active .form-feed__dot::before, ._active .form-feed__dot::after {
-  border-color: #fe9013;
+  [data-active] .form-feed__dot::before, [data-active] .form-feed__dot::after {
+    border-color: #fe9013;
+    transform: translate(-53%, -53%) scale(1);
+  }
 }
 .form-feed__dot::before {
   width: 23px;
   height: 23px;
+  transition: transform 0.3s ease 0.1s;
 }
 @media screen and (max-width: 400px) {
   .form-feed__dot::before {
@@ -1505,6 +1499,7 @@ form:valid .form-footer__button:active {
 .form-feed__dot::after {
   width: 40px;
   height: 40px;
+  transition: transform 0.3s ease 0s;
 }
 @media screen and (max-width: 400px) {
   .form-feed__dot::after {
@@ -1550,8 +1545,9 @@ form:valid .form-footer__button:active {
     font-size: 10px;
   }
 }
-._active .form-feed__amount {
+[data-active] .form-feed__amount {
   color: #fe9013;
+  transition: color 0.3s ease 0s;
 }
 .form-feed__input {
   position: relative;

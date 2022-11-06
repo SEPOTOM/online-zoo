@@ -30,14 +30,139 @@ function openHeaderMenu() {
   header.classList.add('_visible');
 }
 
-function changeFormRangeActive(pageWidth) {
-  const activeItem = document.querySelector('[data-active]');
+function initFormFeed(pageWidth, hiddenRangeElements) {
+  function hideShowRangeElements() {
+    let counter = 0;
 
-  if (pageWidth <= 840) {
-    activeItem.classList.add('_active');
-  } else {
-    activeItem.classList.remove('_active');
+    if (pageWidth < 1600 && !hiddenRangeElements.first) {
+      hiddenRangeElements.first = range.firstElementChild;
+      range.firstElementChild.remove();
+    } else if (pageWidth >= 1600 && hiddenRangeElements.first) {
+      counter++;
+    }
+
+    if (pageWidth < 1000 && !hiddenRangeElements.second) {
+      hiddenRangeElements.second = range.firstElementChild;
+      range.firstElementChild.remove();
+    } else if (pageWidth >= 1000 && hiddenRangeElements.second) {
+      counter++;
+    }
+
+    if (pageWidth < 841 && !hiddenRangeElements.third) {
+      hiddenRangeElements.third = range.firstElementChild;
+      range.firstElementChild.remove();
+    } else if (pageWidth >= 841 && hiddenRangeElements.third) {
+      counter++;
+    }
+
+    if (counter) {
+      for(let hiddenItem in hiddenRangeElements) {
+        if (counter === 0) {
+          break;
+        }
+
+        if (hiddenRangeElements[hiddenItem]) {
+          range.prepend(hiddenRangeElements[hiddenItem]);
+          hiddenRangeElements[hiddenItem] = null;
+          counter--;
+        }
+      }
+    }
   }
+
+  function changeActive(e) {
+    if (!e) {
+      return;
+    }
+
+    const type = e.type;
+    let currentItem = null;
+
+    if (type === 'click') {
+      const target = e.target;
+
+      if (!target.closest('.form-feed__dot')) {
+        return;
+      }
+
+      currentItem = target.closest('.form-feed__item');
+    }
+
+    if (type === 'input') {
+      if (!rangeValues) {
+        rangeValues = getRangeValues();
+      }
+
+      const activeItemIndex = rangeValues.indexOf(amountField.value)
+
+      if (activeItemIndex !== -1) {
+        currentItem = range.children[activeItemIndex];
+      }
+    }
+
+    if (currentItem) {
+      if (currentItem === activeItem) {
+        return;
+      }
+
+      currentItem.classList.add('_transform');
+
+      setTimeout(() => {
+        currentItem.classList.remove('_transform');
+        currentItem.dataset.active = '';
+
+        activeItem.removeAttribute('data-active');
+
+        activeItem = currentItem;
+        if (type === 'click') {
+          setFiledValue();
+        }
+      }, 100);
+    }
+  }
+
+  function setActiveItem() {
+    for (let rangeItem in hiddenRangeElements) {
+      if (hiddenRangeElements[rangeItem] && hiddenRangeElements[rangeItem].hasAttribute('data-active')) {
+        hiddenRangeElements[rangeItem].removeAttribute('data-active');
+        break;
+      }
+    }
+
+    let activeItem = form.querySelector('[data-active]');
+
+    if (activeItem) {
+      return;
+    }
+
+    activeItem = range.lastElementChild;
+    activeItem.dataset.active = '';
+  }
+
+  function setFiledValue() {
+    const value = activeItem.textContent.trim();
+    amountField.value = value;
+  }
+
+  function getRangeValues() {
+    const rangeItems = [...range.children];
+    return rangeItems.map((item) => item.textContent.trim());
+  }
+
+  const form = document.querySelector('.form-feed');
+  const range = form.querySelector('.form-feed__range');
+  const amountField = form.querySelector('.form-feed__price-field');
+
+  hideShowRangeElements();
+  setActiveItem();
+
+  let activeItem = form.querySelector('[data-active]');
+  let rangeValues = null;
+
+  setFiledValue();
+
+  range.onclick = changeActive;
+  amountField.oninput = changeActive;
 }
 
 // Footer form logic
@@ -108,7 +233,12 @@ function changeFormRangeActive(pageWidth) {
     removeNavigationActiveHeader();
   }
 
-  changeFormRangeActive(pageWidth);
+  const hiddenFormFeedRangeElements = {
+    third: null,
+    second: null,
+    first: null,
+  };
+  initFormFeed(pageWidth, hiddenFormFeedRangeElements);
 
   window.addEventListener('resize', () => {
     pageWidth = Math.max(document.body.offsetWidth, document.documentElement.offsetWidth, document.body.clientWidth, document.documentElement.clientWidth);
@@ -121,6 +251,6 @@ function changeFormRangeActive(pageWidth) {
       closeHeaderMenu();
     }
 
-    changeFormRangeActive(pageWidth);
+    initFormFeed(pageWidth, hiddenFormFeedRangeElements);
   });
 }

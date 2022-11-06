@@ -530,24 +530,6 @@
     display: grid;
     padding-top: 15px;
 
-    @media screen and (max-width: $desktop) {
-      &._hide1 {
-        display: none;
-      }
-    }
-
-    @media screen and (max-width: $big-tablet) {
-      &._hide2 {
-        display: none;
-      }
-    }
-
-    @media screen and (max-width: $medium-tablet) {
-      &._hide3 {
-        display: none;
-      }
-    }
-
     @media screen and (max-width: $medium-mobile) {
       padding-top: 11.5px;
     }
@@ -581,11 +563,11 @@
     @media screen and (max-width: $medium-mobile) {
       width: 5px;
       height: 5px;
-      margin: 0 43px 13px 17px;
+      margin: 0 44px 13px 17px;
     }
 
     @media screen and (max-width: $mobile) {
-      margin: 0 43px 10px 17px;
+      margin: 0 44px 10px 17px;
     }
 
     &::before,
@@ -596,23 +578,35 @@
 
       border: 2px solid transparent;
       border-radius: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%) scale(1);
 
       content: '';
 
-      @media screen and (max-width: $medium-mobile) {
-        border-width: 1px;
-        transform: translate(-53%, -53%);
+      ._transform & {
+        transform: translate(-50%, -50%) scale(0);
       }
 
-      ._active & {
+      [data-active] & {
         border-color: $orangeColor;
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      @media screen and (max-width: $medium-mobile) {
+        border-width: 1px;
+        transform: translate(-53%, -53%) scale(1);
+
+        [data-active] & {
+          border-color: $orangeColor;
+          transform: translate(-53%, -53%) scale(1);
+        }
       }
     }
 
     &::before {
       width: 23px;
       height: 23px;
+
+      transition: transform 0.3s ease 0.1s;
 
       @media screen and (max-width: $medium-mobile) {
         width: 11px;
@@ -623,6 +617,8 @@
     &::after {
       width: 40px;
       height: 40px;
+
+      transition: transform 0.3s ease 0s;
 
       @media screen and (max-width: $medium-mobile) {
         width: 20px;
@@ -671,8 +667,10 @@
       }
     }
 
-    ._active & {
+    [data-active] & {
       color: $orangeColor;
+
+      transition: color 0.3s ease 0s;
     }
   }
 
